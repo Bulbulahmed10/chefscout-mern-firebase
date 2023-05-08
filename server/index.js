@@ -8,7 +8,7 @@ const PORT = process.env.PORT || 4000;
 const countryFoodName = require("./data/countryFoodName.json");
 const connectDb = require("./db/connectDb");
 const routes = require("./routes/routes");
-const uri = process.env.MONGODB_URI
+const uri = process.env.MONGODB_URI;
 
 app.use(cors());
 app.use(express.json());
@@ -21,13 +21,10 @@ app.get("/countryFoodName", (req, res) => {
   res.send(countryFoodName);
 });
 
-app.use('/api', routes)
-
+app.use("/api", routes);
 
 // connect mongoDB
-connectDb()
-
-
+connectDb();
 
 // Create a MongoClient with a MongoClientOptions object to set the Stable API version
 const client = new MongoClient(uri, {
@@ -51,9 +48,32 @@ async function run() {
       res.send(result);
     });
 
+    app.post("/recipe", async (req, res) => {
+      const recipe = req.body;
+      const result = await recipesCollection.insertOne(recipe);
+      res.send(result);
+    });
+
     app.get("/chefs", async (req, res) => {
       const cursor = chefsCollection.find();
       const result = await cursor.toArray();
+      res.send(result);
+    });
+
+    app.put("/chef", async (req, res) => {
+      const sellerAndRecipeId = req.body;
+      const filter = { chef_id: sellerAndRecipeId.chef_id };
+      const options = { upsert: true };
+      const updatedChef = {
+        $push: { recipes_id: sellerAndRecipeId.recipe_id },
+      };
+
+      const result = await chefsCollection.updateOne(
+        filter,
+        updatedChef,
+        options
+      );
+      console.log(result);
       res.send(result);
     });
 
