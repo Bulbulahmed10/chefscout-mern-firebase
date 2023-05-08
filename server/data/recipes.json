@@ -1,0 +1,1297 @@
+[
+  {
+    "recipe_id": "00101112",
+    "recipe_image_url": "https://images.unsplash.com/photo-1563690449029-d6e1b8d6003d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1166&q=80",
+    "name": "Scrambled Eggs",
+    "ingredients": [
+      "3 eggs",
+      "1 tbsp butter",
+      "1/4 cup milk",
+      "Salt",
+      "Pepper"
+    ],
+    "instructions": "In a bowl, whisk together eggs and milk. Melt butter in a non-stick pan over medium heat. Pour in egg mixture and cook, stirring occasionally, until eggs are set. Season with salt and pepper to taste.",
+    "time": "10 minutes",
+    "calcium": "50mg",
+
+    "eat_time": "Breakfast",
+    "cooking_difficulty": "Easy",
+
+    "rating": 4,
+    "price": 56
+  },
+  {
+    "recipe_id": "00101113",
+    "recipe_image_url": "https://images.unsplash.com/photo-1567121938596-6d9d015d348b?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80",
+    "name": "Chicken Caesar Salad",
+    "ingredients": [
+      "1 lb chicken breast",
+      "1 head romaine lettuce",
+      "1/2 cup Caesar dressing",
+      "1/4 cup grated Parmesan cheese",
+      "1/2 cup croutons"
+    ],
+    "instructions": "Season chicken with salt and pepper. Grill or pan-fry until cooked through. Cut into bite-sized pieces. Wash and chop lettuce. In a large bowl, toss together lettuce, chicken, dressing, Parmesan cheese, and croutons.",
+    "time": "30 minutes",
+    "calcium": "100mg",
+
+    "eat_time": "Lunch",
+    "cooking_difficulty": "Easy",
+
+    "rating": 3,
+    "price": 64
+  },
+  {
+    "recipe_id": "00101114",
+    "recipe_image_url": "https://images.unsplash.com/photo-1520072959219-c595dc870360?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1290&q=80",
+    "name": "Grilled Cheese Sandwich",
+    "ingredients": [
+      "2 slices bread",
+      "2 slices cheddar cheese",
+      "1 tbsp butter"
+    ],
+    "instructions": "Heat a non-stick pan over medium heat. Butter one side of each bread slice. Place one slice, butter-side down, in the pan. Top with cheese slices. Place the other slice of bread, butter-side up, on top. Cook until bread is toasted and cheese is melted, flipping once.",
+    "time": "15 minutes",
+    "calcium": "200mg",
+
+    "eat_time": "Lunch",
+    "cooking_difficulty": "Easy",
+
+    "rating": 2,
+    "price": 43
+  },
+  {
+    "recipe_id": "00101115",
+    "recipe_image_url": "https://images.unsplash.com/photo-1519708227418-c8fd9a32b7a2?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80",
+    "name": "Baked Salmon",
+    "ingredients": [
+      "1 lb salmon fillet",
+      "1 lemon",
+      "1 tbsp olive oil",
+      "Salt",
+      "Pepper"
+    ],
+    "instructions": "Preheat oven to 375°F. Place salmon fillet in a baking dish. Squeeze lemon juice over the top. Drizzle with olive oil. Season with salt and pepper. Bake for 20-25 minutes, or until salmon is cooked through.",
+    "time": "25 minutes",
+    "calcium": "100mg",
+
+    "eat_time": "Dinner",
+    "cooking_difficulty": "Easy",
+
+    "rating": 2,
+    "price": 85
+  },
+  {
+    "recipe_id": "00101116",
+    "recipe_image_url": "https://images.unsplash.com/photo-1624872095433-7f570671ebe3?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1211&q=80",
+    "name": "Blueberry Pancakes",
+    "ingredients": [
+      "1 cup all-purpose flour",
+      "2 tbsp sugar",
+      "2 tsp baking powder",
+      "1/4 tsp salt",
+      "1 cup milk",
+      "1 egg",
+      "2 tbsp butter, melted",
+      "1/2 cup blueberries"
+    ],
+    "instructions": "In a bowl, whisk together flour, sugar, baking powder, and salt. In another bowl, whisk together milk, egg, and melted butter. Add wet ingredients to dry ingredients and mix until just combined. Gently fold in blueberries. Heat a non-stick pan over medium heat. Pour batter onto the pan, using about 1/4 cup per pancake. Cook until bubbles form on the surface, then flip and cook until golden brown.",
+    "time": "25 minutes",
+    "calcium": "150mg",
+
+    "eat_time": "Breakfast",
+    "cooking_difficulty": "Easy",
+
+    "rating": 3,
+    "price": 53
+  },
+  {
+    "recipe_id": "00202223",
+    "recipe_image_url": "https://images.unsplash.com/photo-1676300185292-e23bb3db50fa?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80",
+    "name": "Beef Stir-Fry",
+    "ingredients": [
+      "1 lb flank steak, sliced",
+      "1 red bell pepper, sliced",
+      "1 green bell pepper, sliced",
+      "1 onion, sliced",
+      "1 cup snow peas",
+      "3 cloves garlic, minced",
+      "1 tbsp cornstarch",
+      "1/4 cup soy sauce",
+      "1/4 cup oyster sauce",
+      "2 tbsp vegetable oil"
+    ],
+    "instructions": "In a bowl, whisk together cornstarch, soy sauce, and oyster sauce. Heat vegetable oil in a large pan or wok over high heat. Add beef and cook until browned. Remove from pan. Add bell peppers, onion, snow peas, and garlic. Cook until vegetables are tender. Add beef back to pan, along with sauce mixture. Stir until sauce thickens and everything is heated through.",
+    "time": "30 minutes",
+    "calcium": "40mg",
+
+    "eat_time": "Dinner",
+    "cooking_difficulty": "Easy",
+
+    "rating": 5,
+    "price": 87
+  },
+  {
+    "recipe_id": "00202224",
+    "recipe_image_url": "https://images.unsplash.com/photo-1595587870672-c79b47875c6a?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1046&q=80",
+    "name": "Caprese Salad",
+    "ingredients": [
+      "1 lb ripe tomatoes, sliced",
+      "8 oz fresh mozzarella cheese, sliced",
+      "1/2 cup fresh basil leaves",
+      "1/4 cup balsamic vinegar",
+      "2 tbsp olive oil",
+      "Salt",
+      "Pepper"
+    ],
+    "instructions": "Arrange tomato slices and mozzarella slices on a plate, alternating between the two. Top with basil leaves. In a small bowl, whisk together balsamic vinegar and olive oil. Drizzle over the salad. Season with salt and pepper to taste.",
+    "time": "15 minutes",
+    "calcium": "500mg",
+
+    "eat_time": "Lunch",
+    "cooking_difficulty": "Easy",
+
+    "rating": 4,
+    "price": 65
+  },
+  {
+    "recipe_id": "00202226",
+    "recipe_image_url": "https://images.unsplash.com/photo-1556710807-aa697ab9e415?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80",
+    "name": "Classic Cheeseburger",
+    "ingredients": [
+      "1 lb ground beef",
+      "4 slices of American cheese",
+      "4 hamburger buns",
+      "1/4 cup mayonnaise",
+      "1/4 cup ketchup"
+    ],
+    "instructions": "1. Preheat grill to high heat. 2. Form ground beef into four patties. 3. Grill patties for 3-4 minutes per side. 4. Add a slice of cheese to each patty during the last minute of cooking. 5. Toast buns on grill. 6. Spread mayonnaise on bottom buns and ketchup on top buns. 7. Place patties on bottom buns and cover with top buns. Serve hot.",
+    "cooking_time": "15 minutes",
+    "calcium": "10%",
+
+    "eat_time": "Lunch",
+    "cooking_difficulty": "Easy",
+
+    "rating": 2,
+    "price": 54
+  },
+  {
+    "recipe_id": "00303334",
+    "recipe_image_url": "https://images.unsplash.com/photo-1567608285969-48e4bbe0d399?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80",
+    "name": "Pesto Pasta",
+    "ingredients": [
+      "12 oz pasta",
+      "1/2 cup basil pesto",
+      "1/2 cup grated parmesan cheese",
+      "1/4 cup pine nuts",
+      "2 cloves garlic, minced"
+    ],
+    "instruction": "1. Cook pasta according to package instructions. 2. Reserve 1/4 cup of pasta water. 3. In a small pan, toast pine nuts until lightly browned. 4. In a large bowl, mix together cooked pasta, pesto, parmesan cheese, garlic, and pine nuts. 5. Add reserved pasta water as needed to create a creamy sauce. 6. Serve hot.",
+    "cooking_time": "20 minutes",
+    "calcium": "20%",
+
+    "eat_time": "Dinner",
+    "cooking_difficulty": "Easy",
+
+    "rating": 3,
+    "price": 96
+  },
+  {
+    "recipe_id": "00303335",
+    "recipe_image_url": "https://images.unsplash.com/photo-1504754524776-8f4f37790ca0?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80",
+    "name": "Blueberry Pancakes",
+    "ingredients": [
+      "1 cup all-purpose flour",
+      "1 tbsp sugar",
+      "1 tsp baking powder",
+      "1/2 tsp baking soda",
+      "1/4 tsp salt",
+      "1 cup buttermilk",
+      "1 egg",
+      "1/4 cup melted butter",
+      "1 cup blueberries"
+    ],
+    "instruction": "1. In a large bowl, whisk together flour, sugar, baking powder, baking soda, and salt. 2. In a separate bowl, whisk together buttermilk, egg, and melted butter. 3. Add wet ingredients to dry ingredients and stir until just combined. 4. Gently fold in blueberries. 5. Heat a nonstick skillet or griddle over medium heat. 6. Pour 1/4 cup of batter onto skillet for each pancake. 7. Cook for 2-3 minutes on each side or until golden brown. 8. Serve hot with butter and syrup.",
+    "cooking_time": "30 minutes",
+    "calcium": "30%",
+
+    "eat_time": "Breakfast",
+    "cooking_difficulty": "Easy",
+
+    "rating": 5,
+    "price": 36
+  },
+  {
+    "recipe_id": "00404445",
+    "recipe_image_url": "https://images.unsplash.com/photo-1584278858764-2ddcd7f228da?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80",
+    "name": "Fluffy Pancakes",
+    "ingredients": [
+      "flour",
+      "baking powder",
+      "sugar",
+      "salt",
+      "milk",
+      "egg",
+      "butter"
+    ],
+    "instructions": "1. In a mixing bowl, combine the dry ingredients. 2. In a separate bowl, whisk together the wet ingredients. 3. Pour the wet ingredients into the dry ingredients and stir until just combined. 4. Heat a nonstick skillet over medium heat. 5. Spoon about 1/4 cup of batter onto the skillet for each pancake. 6. Cook until the edges are set and bubbles form on the surface. 7. Flip and cook until the other side is golden brown. 8. Serve hot with maple syrup and butter.",
+    "cookingTime": "20 minutes",
+    "calcium": "9% DV",
+
+    "eatTime": "Breakfast",
+    "cookingDifficulty": "Easy",
+    "rating": 2,
+    "price": 36
+  },
+  {
+    "recipe_id": "00404446",
+    "recipe_image_url": "https://images.unsplash.com/photo-1608019528071-c1a5c53c738c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80",
+    "name": "Classic French Toast",
+    "ingredients": [
+      "bread",
+      "eggs",
+      "milk",
+      "vanilla extract",
+      "cinnamon",
+      "butter",
+      "maple syrup"
+    ],
+    "instructions": "1. In a mixing bowl, whisk together the eggs, milk, vanilla extract, and cinnamon. 2. Heat a nonstick skillet over medium heat. 3. Dip each slice of bread into the egg mixture, making sure to coat both sides. 4. Melt a small amount of butter in the skillet. 5. Add the bread slices and cook until golden brown on both sides. 6. Serve hot with maple syrup.",
+    "cookingTime": "15 minutes",
+    "calcium": "10% DV",
+
+    "eatTime": "Breakfast",
+    "cookingDifficulty": "Easy",
+    "rating": 4,
+    "price": 84
+  },
+  {
+    "recipe_id": "00505556",
+    "recipe_image_url": "https://images.unsplash.com/photo-1485963631004-f2f00b1d6606?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1075&q=80",
+    "name": "Classic Macaroni and Cheese",
+    "ingredients": [
+      "elbow macaroni",
+      "butter",
+      "flour",
+      "milk",
+      "cheddar cheese",
+      "salt",
+      "pepper",
+      "breadcrumbs"
+    ],
+    "instructions": "1. Cook the macaroni according to package instructions. 2. In a separate saucepan, melt the butter over medium heat. 3. Add the flour and whisk until smooth. 4. Gradually add the milk, whisking constantly, until the mixture is smooth. 5. Add the cheese, salt, and pepper and stir until the cheese is melted and the sauce is smooth. 6. Drain the macaroni and stir it into the cheese sauce. 7. Transfer the mixture to a baking dish and sprinkle with breadcrumbs. 8. Bake at 350°F for 20-25 minutes, until the top is golden brown and the cheese is bubbly.",
+    "cookingTime": "45 minutes",
+    "calcium": "25% DV",
+
+    "eatTime": "Dinner",
+    "cookingDifficulty": "Easy",
+    "rating": 4,
+    "price": 64
+  },
+  {
+    "recipe_id": "00505557",
+    "recipe_image_url": "https://images.unsplash.com/photo-1492683962492-deef0ec456c0?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1156&q=80",
+    "name": "Blueberry Pancakes",
+    "ingredients": ["flour", "baking powder", "sugar", "milk", "blueberries"],
+    "instructions": "1. Mix dry ingredients. 2. Add milk and mix. 3. Fold in blueberries. 4. Cook on a griddle. 5. Serve with syrup.",
+    "cooking_time": "30 minutes",
+    "calcium": "10%",
+
+    "eat_time": "Breakfast",
+    "cooking_difficulty": "Easy",
+
+    "rating": 3,
+    "price": 21
+  },
+  {
+    "recipe_id": "00505558",
+    "recipe_image_url": "https://images.unsplash.com/photo-1496074620649-6b1b02e5c1c8?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1062&q=80",
+    "name": "Spinach and Feta Stuffed Chicken",
+    "ingredients": [
+      "chicken breasts",
+      "spinach",
+      "feta cheese",
+      "garlic",
+      "olive oil"
+    ],
+    "instructions": "1. Mix spinach and feta. 2. Cut a pocket in each chicken breast. 3. Stuff spinach and feta into pockets. 4. Season with garlic and olive oil. 5. Bake in the oven. ",
+    "cooking_time": "45 minutes",
+    "calcium": "15%",
+
+    "eat_time": "Dinner",
+    "cooking_difficulty": "Easy",
+
+    "rating": 2,
+    "price": 96
+  },
+  {
+    "recipe_id": "00505559",
+    "recipe_image_url": "https://images.unsplash.com/photo-1588137378633-dea1336ce1e2?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80",
+    "name": "Avocado Toast",
+    "ingredients": [
+      "bread",
+      "avocado",
+      "lemon juice",
+      "salt",
+      "red pepper flakes"
+    ],
+    "instructions": "1. Toast bread. 2. Mash avocado with lemon juice and salt. 3. Spread avocado on toast. 4. Sprinkle red pepper flakes. 5. Serve.",
+    "cooking_time": "10 minutes",
+    "calcium": "5%",
+
+    "eat_time": "Breakfast",
+    "cooking_difficulty": "Easy",
+
+    "rating": 4,
+    "price": 23
+  },
+  {
+    "recipe_id": "00606667",
+    "recipe_image_url": "https://images.unsplash.com/photo-1601316585772-ba1e6dae9cfc?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1333&q=80",
+    "name": "Baked Salmon",
+    "ingredients": ["salmon fillets", "lemon", "butter", "garlic", "dill"],
+    "instructions": "1. Preheat oven. 2. Season salmon with lemon, butter, garlic, and dill. 3. Bake in the oven. 4. Serve with lemon wedges.",
+    "cooking_time": "25 minutes",
+    "calcium": "10%",
+
+    "eat_time": "Dinner",
+    "cooking_difficulty": "Easy",
+
+    "rating": 1,
+    "price": 47
+  },
+  {
+    "recipe_id": "00606668",
+    "recipe_image_url": "https://images.unsplash.com/photo-1672856399675-8c099efbe0e2?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80",
+    "name": "Egg Fried Rice",
+    "ingredients": ["rice", "eggs", "peas", "carrots", "soy sauce"],
+    "instructions": "1. Cook rice. 2. Scramble eggs. 3. Fry peas and carrots. 4. Mix rice, eggs, peas, and carrots. 5. Add soy sauce. 6. Fry for a few minutes. 7. Serve.",
+    "cooking_time": "20 minutes",
+    "calcium": "5%",
+
+    "eat_time": "Lunch",
+    "cooking_difficulty": "Easy",
+
+    "rating": 5,
+    "price": 96
+  },
+  {
+    "recipe_id": "00606669",
+    "recipe_image_url": "https://images.unsplash.com/photo-1517422361159-d84fd5600d22?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1331&q=80",
+    "name": "Greek Yogurt Parfait",
+    "ingredients": ["Greek yogurt", "granola", "berries", "honey", "cinnamon"],
+    "instructions": "1. Layer Greek yogurt, granola, and berries in a glass. 2. Drizzle with honey. 3. Sprinkle with cinnamon. 4. Serve.",
+    "cooking_time": "10 minutes",
+    "calcium": "20%",
+
+    "eat_time": "Breakfast",
+    "cooking_difficulty": "Easy",
+
+    "rating": 1,
+    "price": 84
+  },
+  {
+    "recipe_id": "00707778",
+    "recipe_image_url": "https://images.unsplash.com/photo-1543826173-1beeb97525d8?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1142&q=80",
+    "name": "Vegetable Stir Fry",
+    "ingredients": ["vegetables", "tofu", "soy sauce", "garlic", "ginger"],
+    "instructions": "1. Cut vegetables and tofu into bite-sized pieces. 2. Fry garlic and ginger in a wok. 3. Add vegetables and tofu. 4. Stir-fry for a few minutes. 5. Add soy sauce. 6. Serve over rice.",
+    "cooking_time": "30 minutes",
+    "calcium": "15%",
+
+    "eat_time": "Dinner",
+    "cooking_difficulty": "Easy",
+
+    "rating": 2,
+    "price": 36
+  },
+  {
+    "recipe_id": "00707779",
+    "recipe_image_url": "https://images.unsplash.com/photo-1547496502-affa22d38842?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=977&q=80",
+    "name": "Quinoa Salad",
+    "ingredients": [
+      "quinoa",
+      "cherry tomatoes",
+      "cucumber",
+      "feta cheese",
+      "olive oil"
+    ],
+    "instructions": "1. Cook quinoa. 2. Cut cherry tomatoes and cucumber. 3. Mix quinoa, cherry tomatoes, cucumber, and feta cheese. 4. Drizzle with olive oil. 5. Serve.",
+    "cooking_time": "25 minutes",
+    "calcium": "10%",
+
+    "eat_time": "Lunch",
+    "cooking_difficulty": "Easy",
+
+    "rating": 4,
+    "price": 98
+  },
+  {
+    "recipe_id": "00707780",
+    "recipe_image_url": "https://images.unsplash.com/photo-1510693206972-df098062cb71?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=998&q=80",
+    "name": "Omelette",
+    "ingredients": ["eggs", "cheese", "ham", "mushrooms", "spinach"],
+    "instructions": "1. Whisk eggs in a bowl. 2. Add cheese, ham, mushrooms, and spinach. 3. Fry in a pan. 4. Serve.",
+    "cooking_time": "15 minutes",
+    "calcium": "15%",
+
+    "eat_time": "Breakfast",
+    "cooking_difficulty": "Easy",
+
+    "rating": 5,
+    "price": 32
+  },
+  {
+    "recipe_id": "00808889",
+    "recipe_image_url": "https://images.unsplash.com/photo-1633959639810-16c90bee95f9?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1074&q=80",
+    "name": "Baked Potato",
+    "ingredients": [
+      "potatoes",
+      "butter",
+      "sour cream",
+      "cheddar cheese",
+      "bacon bits"
+    ],
+    "instructions": "1. Preheat oven. 2. Poke potatoes with a fork. 3. Rub with butter. 4. Bake in the oven. 5. Top with sour cream, cheddar cheese, and bacon bits. 6. Serve.",
+    "cooking_time": "60 minutes",
+    "calcium": "10%",
+
+    "eat_time": "Lunch",
+    "cooking_difficulty": "Easy",
+
+    "rating": 3,
+    "price": 77
+  },
+  {
+    "recipe_id": "00808890",
+    "recipe_image_url": "https://images.unsplash.com/photo-1515041761709-f9fc96e04cd3?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80",
+    "name": "Avocado Toast",
+    "ingredients": ["avocado", "bread", "lemon", "salt", "pepper"],
+    "instructions": "1. Toast bread. 2. Mash avocado with lemon juice, salt, and pepper. 3. Spread on toast. 4. Serve.",
+    "cooking_time": "10 minutes",
+    "calcium": "2%",
+
+    "eat_time": "Breakfast",
+    "cooking_difficulty": "Easy",
+
+    "rating": 5,
+    "price": 65
+  },
+  {
+    "recipe_id": "00808891",
+    "recipe_image_url": "https://images.unsplash.com/photo-1605590955562-be1a5fda4161?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1098&q=80",
+    "name": "Pesto Pasta",
+    "ingredients": [
+      "pasta",
+      "basil pesto",
+      "cherry tomatoes",
+      "garlic",
+      "parmesan cheese"
+    ],
+    "instructions": "1. Cook pasta. 2. Fry garlic and cherry tomatoes in a pan. 3. Add cooked pasta and basil pesto. 4. Stir. 5. Top with parmesan cheese. 6. Serve.",
+    "cooking_time": "20 minutes",
+    "calcium": "5%",
+
+    "eat_time": "Lunch",
+    "cooking_difficulty": "Easy",
+
+    "rating": 4,
+    "price": 21
+  },
+  {
+    "recipe_id": "00909910",
+    "recipe_image_url": "https://images.unsplash.com/photo-1598515211932-b130a728a769?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80",
+    "name": "Roasted Chicken",
+    "ingredients": ["chicken", "olive oil", "lemon", "rosemary", "garlic"],
+    "instructions": "1. Preheat oven. 2. Rub chicken with olive oil, lemon juice, rosemary, and garlic. 3. Roast in the oven. 4. Serve.",
+    "cooking_time": "90 minutes",
+    "calcium": "4%",
+
+    "eat_time": "Dinner",
+    "cooking_difficulty": "Easy",
+
+    "rating": 3,
+    "price": 95
+  },
+  {
+    "recipe_id": "00909911",
+    "recipe_image_url": "https://images.unsplash.com/photo-1631359544940-535dcc2dc72c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=993&q=80",
+    "name": "French Toast",
+    "ingredients": ["bread", "eggs", "milk", "cinnamon", "vanilla extract"],
+    "instructions": "1. Whisk eggs, milk, cinnamon, and vanilla extract in a bowl. 2. Dip bread in the mixture. 3. Fry in a pan. 4. Serve with syrup and butter.",
+    "cooking_time": "20 minutes",
+    "calcium": "6%",
+
+    "eat_time": "Breakfast",
+    "cooking_difficulty": "Easy",
+
+    "rating": 3,
+    "price": 35
+  },
+  {
+    "recipe_id": "00909912",
+    "recipe_image_url": "https://images.unsplash.com/photo-1499125562588-29fb8a56b5d5?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1332&q=80",
+    "name": "Baked Salmon",
+    "ingredients": ["salmon", "lemon", "olive oil", "dill", "garlic"],
+    "instructions": "1. Preheat oven. 2. Rub salmon with olive oil, lemon juice, dill, and garlic. 3. Bake in the oven. 4. Serve.",
+    "cooking_time": "30 minutes",
+    "calcium": "8%",
+
+    "eat_time": "Dinner",
+    "cooking_difficulty": "Easy",
+
+    "rating": 2,
+    "price": 78
+  },
+  {
+    "recipe_id": "001010122",
+    "recipe_image_url": "https://images.unsplash.com/photo-1494597706938-de2cd7341979?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1204&q=80",
+    "name": "Omelette",
+    "ingredients": ["eggs", "cheese", "mushrooms", "spinach", "salt"],
+    "instructions": "1. Whisk eggs and salt in a bowl. 2. Fry mushrooms and spinach in a pan. 3. Pour eggs over vegetables. 4. Sprinkle cheese on top. 5. Cook until set. 6. Fold in half. 7. Serve.",
+    "cooking_time": "15 minutes",
+    "calcium": "10%",
+
+    "eat_time": "Breakfast",
+    "cooking_difficulty": "Easy",
+
+    "rating": 4,
+    "price": 32
+  },
+  {
+    "recipe_id": "001010123",
+    "recipe_image_url": "https://images.unsplash.com/photo-1528735602780-2552fd46c7af?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1173&q=80",
+    "name": "Grilled Cheese Sandwich",
+    "ingredients": [
+      "bread",
+      "cheddar cheese",
+      "butter",
+      "garlic powder",
+      "paprika"
+    ],
+    "instructions": "1. Butter bread. 2. Add cheese between bread slices. 3. Sprinkle garlic powder and paprika. 4. Grill in a pan until cheese is melted. 5. Serve.",
+    "cooking_time": "10 minutes",
+    "calcium": "15%",
+
+    "eat_time": "Lunch",
+    "cooking_difficulty": "Easy",
+
+    "rating": 5,
+    "price": 89
+  },
+  {
+    "recipe_id": "001010124",
+    "recipe_image_url": "https://images.unsplash.com/photo-1593967858208-67ddb5b4c406?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80",
+    "name": "Stir Fry Vegetables",
+    "ingredients": ["broccoli", "carrots", "onion", "garlic", "soy sauce"],
+    "instructions": "1. Cut vegetables into small pieces. 2. Fry garlic and onion in a pan. 3. Add vegetables. 4. Stir fry until cooked. 5. Add soy sauce. 6. Serve.",
+    "cooking_time": "20 minutes",
+    "calcium": "6%",
+
+    "eat_time": "Dinner",
+    "cooking_difficulty": "Easy",
+
+    "rating": 5,
+    "price": 54
+  },
+  {
+    "recipe_id": "537567542",
+    "recipe_image_url": "https://images.unsplash.com/photo-1512621776951-a57141f2eefd?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80",
+    "name": "Chicken Caesar Salad",
+    "ingredients": [
+      "chicken",
+      "romaine lettuce",
+      "parmesan cheese",
+      "caesar dressing",
+      "croutons"
+    ],
+    "instructions": "1. Cook chicken. 2. Cut lettuce into bite-sized pieces. 3. Add parmesan cheese, croutons, and cooked chicken. 4. Toss with caesar dressing. 5. Serve.",
+    "cooking_time": "30 minutes",
+    "calcium": "15%",
+
+    "eat_time": "Lunch",
+    "cooking_difficulty": "Easy",
+
+    "rating": 4,
+    "price": 85
+  },
+  {
+    "recipe_id": "5445451",
+    "recipe_image_url": "https://images.unsplash.com/photo-1564813227527-a99b83712e45?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1125&q=80",
+    "name": "Pesto Chicken Pasta",
+    "ingredients": [
+      "chicken",
+      "pasta",
+      "basil pesto",
+      "cherry tomatoes",
+      "parmesan cheese"
+    ],
+    "instructions": "1. Cook pasta. 2. Cook chicken. 3. Fry cherry tomatoes in a pan. 4. Add cooked pasta, chicken, and basil pesto. 5. Stir. 6. Top with parmesan cheese. 7. Serve.",
+    "cooking_time": "30 minutes",
+    "calcium": "8%",
+
+    "eat_time": "Dinner",
+    "cooking_difficulty": "Easy",
+
+    "rating": 3,
+    "price": 32
+  },
+  {
+    "recipe_id": "4846956",
+    "name": "Avocado Toast",
+    "recipe_image_url": "https://images.unsplash.com/photo-1551266519-b6713933ebd6?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1158&q=80",
+    "ingredients": ["bread", "avocado", "salt", "pepper", "lemon juice"],
+    "instructions": "1. Toast bread. 2. Mash avocado with salt, pepper, and lemon juice. 3. Spread avocado on toast. 4. Serve.",
+    "cooking_time": "10 minutes",
+    "calcium": "2%",
+    "eat_time": "Breakfast",
+    "cooking_difficulty": "Easy",
+
+    "rating": 3,
+    "price": 49
+  },
+  {
+    "recipe_id": "46765455",
+    "recipe_image_url": "https://images.unsplash.com/photo-1612700722193-f0410adb8949?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80",
+    "name": "Vegetable Curry",
+    "ingredients": [
+      "cauliflower",
+      "carrots",
+      "onion",
+      "garlic",
+      "curry powder"
+    ],
+    "instructions": "1. Cut vegetables into small pieces. 2. Fry garlic and onion in a pan. 3. Add vegetables. 4. Add curry powder. 5. Cook until vegetables are soft. 6. Serve.",
+    "cooking_time": "30 minutes",
+    "calcium": "4%",
+    "eat_time": "Dinner",
+    "cooking_difficulty": "Easy",
+
+    "rating": 4,
+    "price": 24
+  },
+  {
+    "recipe_id": "564764454",
+    "recipe_image_url": "https://images.unsplash.com/photo-1604497181015-76590d828b75?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1171&q=80",
+    "name": "Tuna Salad",
+    "ingredients": [
+      "canned tuna",
+      "lettuce",
+      "celery",
+      "mayonnaise",
+      "lemon juice"
+    ],
+    "instructions": "1. Drain canned tuna. 2. Cut lettuce and celery into small pieces. 3. Mix tuna, lettuce, and celery in a bowl. 4. Add mayonnaise and lemon juice. 5. Toss. 6. Serve.",
+    "cooking_time": "10 minutes",
+    "calcium": "2%",
+
+    "eat_time": "Lunch",
+    "cooking_difficulty": "Easy",
+
+    "rating": 3,
+    "price": 37
+  },
+  {
+    "recipe_id": "677464156",
+    "recipe_image_url": "https://images.unsplash.com/photo-1668724775591-f50dd8ed65a5?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80",
+    "name": "Beef Tacos",
+    "ingredients": ["beef", "taco shells", "lettuce", "tomato", "sour cream"],
+    "instructions": "1. Cook beef. 2. Cut lettuce and tomato into small pieces. 3. Heat taco shells in the oven. 4. Add cooked beef, lettuce, and tomato to taco shells. 5. Top with sour cream. 6. Serve.",
+    "cooking_time": "30 minutes",
+    "calcium": "4%",
+
+    "eat_time": "Dinner",
+    "cooking_difficulty": "Easy",
+
+    "rating": 4,
+    "price": 64
+  },
+  {
+    "recipe_id": "78646676",
+    "recipe_image_url": "https://images.unsplash.com/photo-1677030002034-e1d081abfb97?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80",
+    "name": "Frittata",
+    "ingredients": ["eggs", "milk", "spinach", "cheddar cheese", "salt"],
+    "instructions": "1. Whisk eggs, milk, and salt in a bowl. 2. Add spinach and cheese. 3. Pour mixture into a pan. 4. Cook until set. 5. Serve.",
+    "cooking_time": "20 minutes",
+    "calcium": "10%",
+
+    "eat_time": "Breakfast",
+    "cooking_difficulty": "Easy",
+
+    "rating": 5,
+    "price": 29
+  },
+  {
+    "recipe_id": "7646545",
+    "recipe_image_url": "https://images.unsplash.com/photo-1622973536968-3ead9e780960?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80",
+    "name": "Spaghetti Bolognese",
+    "ingredients": [
+      "spaghetti",
+      "ground beef",
+      "tomato sauce",
+      "onion",
+      "garlic"
+    ],
+    "instructions": "1. Cook spaghetti. 2. Fry garlic and onion in a pan. 3. Add ground beef. 4. Cook until brown. 5. Add tomato sauce. 6. Simmer for 10 minutes. 7. Serve.",
+    "cooking_time": "40 minutes",
+    "calcium": "4%",
+
+    "eat_time": "Dinner",
+    "cooking_difficulty": "Easy",
+
+    "rating": 5,
+    "price": 14
+  },
+  {
+    "recipe_id": "5441671",
+    "recipe_image_url": "https://images.unsplash.com/photo-1531664412848-9610afed156c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80",
+    "name": "Egg Salad Sandwich",
+    "ingredients": ["boiled eggs", "mayonnaise", "mustard", "lettuce", "bread"],
+    "instructions": "1. Chop boiled eggs. 2. Mix eggs, mayonnaise, and mustard in a bowl. 3. Add salt and pepper to taste. 4. Assemble sandwich with egg mixture and lettuce. 5. Serve.",
+    "cooking_time": "15 minutes",
+    "calcium": "4%",
+
+    "eat_time": "Lunch",
+    "cooking_difficulty": "Easy",
+
+    "rating": 6,
+    "price": 39
+  },
+  {
+    "recipe_id": "7676145",
+    "recipe_image_url": "https://images.unsplash.com/photo-1670508142255-f119391c4213?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=831&q=80",
+    "name": "Chicken Alfredo",
+    "ingredients": [
+      "fettuccine pasta",
+      "chicken breast",
+      "heavy cream",
+      "butter",
+      "Parmesan cheese"
+    ],
+    "instructions": "1. Cook fettuccine pasta. 2. Cut chicken breast into small pieces. 3. Fry chicken in a pan. 4. Add heavy cream and butter. 5. Add Parmesan cheese. 6. Simmer until sauce thickens. 7. Serve.",
+    "cooking_time": "40 minutes",
+    "calcium": "6%",
+
+    "eat_time": "Dinner",
+    "cooking_difficulty": "Easy",
+
+    "rating": 5,
+    "price": 62
+  },
+  {
+    "recipe_id": "876687146",
+    "recipe_image_url": "https://images.unsplash.com/photo-1492683962492-deef0ec456c0?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2056&q=80",
+    "name": "Blueberry Pancakes",
+    "ingredients": ["pancake mix", "blueberries", "milk", "eggs", "butter"],
+    "instructions": "1. Mix pancake mix, milk, eggs, and melted butter in a bowl. 2. Add blueberries to the batter. 3. Pour batter onto a hot griddle. 4. Cook until bubbles form. 5. Flip and cook until golden brown. 6. Serve.",
+    "cooking_time": "20 minutes",
+    "calcium": "8%",
+
+    "eat_time": "Breakfast",
+    "cooking_difficulty": "Easy",
+
+    "rating": 4,
+    "price": 54
+  },
+  {
+    "recipe_id": "644164678",
+    "recipe_image_url": "https://images.unsplash.com/photo-1622637012640-83ff490e189f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1074&q=80",
+    "name": "Caprese Salad",
+    "ingredients": [
+      "tomato",
+      "mozzarella cheese",
+      "basil leaves",
+      "olive oil",
+      "balsamic vinegar"
+    ],
+    "instructions": "1. Slice tomatoes and mozzarella cheese. 2. Arrange tomatoes and mozzarella cheese on a plate. 3. Add basil leaves. 4. Drizzle olive oil and balsamic vinegar. 5. Serve.",
+    "cooking_time": "10 minutes",
+    "calcium": "10%",
+
+    "eat_time": "Lunch",
+    "cooking_difficulty": "Easy",
+
+    "rating": 4,
+    "price": 26
+  },
+  {
+    "recipe_id": "544774",
+    "recipe_image_url": "https://images.unsplash.com/photo-1486887396153-fa416526c108?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80",
+    "name": "Baked Ziti",
+    "ingredients": [
+      "ziti pasta",
+      "ricotta cheese",
+      "mozzarella cheese",
+      "marinara sauce",
+      "ground beef"
+    ],
+    "instructions": "1. Cook ziti pasta. 2. Brown ground beef in a pan. 3. Mix cooked pasta, ground beef, marinara sauce, and ricotta cheese in a baking dish. 4. Top with mozzarella cheese. 5. Bake in oven for 25 minutes. 6. Serve.",
+    "cooking_time": "40 minutes",
+    "calcium": "20%",
+
+    "eat_time": "Dinner",
+    "cooking_difficulty": "Easy",
+
+    "rating": 5,
+    "price": 84
+  },
+  {
+    "recipe_id": "654545465",
+    "recipe_image_url": "https://images.unsplash.com/photo-1544378730-5e409d0e649e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=956&q=80",
+    "name": "Pesto Chicken",
+    "ingredients": [
+      "chicken breast",
+      "pesto sauce",
+      "tomatoes",
+      "mozzarella cheese",
+      "olive oil"
+    ],
+    "instructions": "1. Preheat oven to 400°F. 2. Season chicken breast with salt and pepper. 3. Spread pesto sauce over chicken. 4. Add sliced tomatoes on top. 5. Top with mozzarella cheese. 6. Drizzle olive oil. 7. Bake in oven for 20-25 minutes. 8. Serve.",
+    "cooking_time": "30 minutes",
+    "calcium": "8%",
+
+    "eat_time": "Dinner",
+    "cooking_difficulty": "Easy",
+
+    "rating": 4,
+    "price": 95
+  },
+  {
+    "recipe_id": "6878715646",
+    "recipe_image_url": "https://images.unsplash.com/photo-1587569906338-f79d500d7122?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1074&q=80",
+    "name": "Huevos Rancheros",
+    "ingredients": [
+      "tortillas",
+      "refried beans",
+      "salsa",
+      "eggs",
+      "cheddar cheese"
+    ],
+    "instructions": "1. Heat tortillas in a pan. 2. Spread refried beans on top of tortillas. 3. Add salsa. 4. Fry eggs. 5. Place eggs on top of tortillas. 6. Top with cheddar cheese. 7. Serve.",
+    "cooking_time": "20 minutes",
+    "calcium": "15%",
+
+    "eat_time": "Breakfast",
+    "cooking_difficulty": "Easy",
+
+    "rating": 3,
+    "price": 36
+  },
+  {
+    "recipe_id": "5798786",
+    "recipe_image_url": "https://images.unsplash.com/photo-1668724776332-a20685b85151?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80",
+    "name": "Beef Tacos",
+    "ingredients": [
+      "ground beef",
+      "taco seasoning",
+      "taco shells",
+      "lettuce",
+      "tomatoes"
+    ],
+    "instructions": "1. Brown ground beef in a pan. 2. Add taco seasoning. 3. Heat taco shells in the oven. 4. Assemble tacos with ground beef, lettuce, and tomatoes. 5. Serve.",
+    "cooking_time": "20 minutes",
+    "calcium": "4%",
+
+    "eat_time": "Dinner",
+    "cooking_difficulty": "Easy",
+
+    "rating": 5,
+    "price": 48
+  },
+  {
+    "recipe_id": "6876454",
+    "recipe_image_url": "https://images.unsplash.com/photo-1543339308-43e59d6b73a6?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80",
+    "name": "Cobb Salad",
+    "ingredients": [
+      "lettuce",
+      "chicken breast",
+      "bacon",
+      "hard boiled eggs",
+      "avocado"
+    ],
+    "instructions": "1. Cook chicken breast and bacon. 2. Chop lettuce. 3. Add sliced chicken breast, bacon, hard boiled eggs, and sliced avocado. 4. Serve with dressing of your choice.",
+    "cooking_time": "30 minutes",
+    "calcium": "10%",
+
+    "eat_time": "Lunch",
+    "cooking_difficulty": "Easy",
+
+    "rating": 3,
+    "price": 25
+  },
+  {
+    "recipe_id": "7867657545",
+    "recipe_image_url": "https://images.unsplash.com/photo-1497729695694-e0409368e309?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80",
+    "name": "Vegetarian Burrito Bowl",
+    "ingredients": ["brown rice", "black beans", "corn", "tomatoes", "avocado"],
+    "instructions": "1. Cook brown rice. 2. Heat black beans and corn in a pan. 3. Dice tomatoes and avocado. 4. Assemble burrito bowl with rice, black beans, corn, tomatoes, and avocado. 5. Serve.",
+    "cooking_time": "25 minutes",
+    "calcium": "8%",
+
+    "eat_time": "Lunch",
+    "cooking_difficulty": "Easy",
+
+    "rating": 2,
+    "price": 19
+  },
+  {
+    "recipe_id": "4674767578",
+    "recipe_image_url": "https://images.unsplash.com/photo-1678684277915-5d3f48977b87?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1220&q=80",
+    "name": "Beef Stroganoff",
+    "ingredients": [
+      "beef sirloin",
+      "onion",
+      "mushrooms",
+      "beef broth",
+      "sour cream"
+    ],
+    "instructions": "1. Slice beef sirloin into thin strips. 2. Sauté beef and onion in a pan until beef is browned. 3. Add mushrooms and beef broth to pan. 4. Simmer until mushrooms are cooked. 5. Remove pan from heat and stir in sour cream. 6. Serve over cooked egg noodles.",
+    "cooking_time": "40 minutes",
+    "calcium": "4%",
+
+    "eat_time": "Dinner",
+    "cooking_difficulty": "Hard",
+
+    "rating": 4,
+    "price": 58
+  },
+  {
+    "recipe_id": "6874164156",
+    "recipe_image_url": "https://images.unsplash.com/photo-1511357840105-748c95f0a7e7?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1297&q=80",
+    "name": "Caprese Salad",
+    "ingredients": [
+      "tomatoes",
+      "mozzarella cheese",
+      "basil leaves",
+      "balsamic vinegar",
+      "olive oil"
+    ],
+    "instructions": "1. Slice tomatoes and mozzarella cheese. 2. Arrange tomatoes and mozzarella cheese on a plate. 3. Top with basil leaves. 4. Drizzle balsamic vinegar and olive oil over salad. 5. Serve.",
+    "cooking_time": "10 minutes",
+    "calcium": "25%",
+
+    "eat_time": "Lunch",
+    "cooking_difficulty": "Easy",
+
+    "rating": 5,
+    "price": 34
+  },
+  {
+    "recipe_id": "5641687878",
+    "recipe_image_url": "https://images.unsplash.com/photo-1558642452-9d2a7deb7f62?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80",
+    "name": "Honey Mustard Chicken",
+    "ingredients": [
+      "chicken thighs",
+      "honey",
+      "dijon mustard",
+      "garlic",
+      "thyme"
+    ],
+    "instructions": "1. Preheat oven to 375°F. 2. Mix honey, dijon mustard, minced garlic, and chopped thyme in a bowl. 3. Spread mixture over chicken thighs. 4. Bake chicken in oven for 35-40 minutes. 5. Serve.",
+    "cooking_time": "45 minutes",
+    "calcium": "2%",
+
+    "eat_time": "Dinner",
+    "cooking_difficulty": "Easy",
+
+    "rating": 4,
+    "price": 26
+  },
+  {
+    "recipe_id": "57495664445",
+    "recipe_image_url": "https://images.unsplash.com/photo-1645296811677-522a5f53e2f8?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80",
+    "name": "Pesto Pasta Salad",
+    "ingredients": [
+      "rotini pasta",
+      "cherry tomatoes",
+      "basil pesto",
+      "parmesan cheese",
+      "pine nuts"
+    ],
+    "instructions": "1. Cook rotini pasta. 2. Halve cherry tomatoes. 3. Mix cooked pasta with cherry tomatoes, basil pesto, and grated parmesan cheese. 4. Toast pine nuts in a pan. 5. Add pine nuts to pasta salad. 6. Serve.",
+    "cooking_time": "25 minutes",
+    "calcium": "6%",
+
+    "eat_time": "Lunch",
+    "cooking_difficulty": "Easy",
+
+    "rating": 5,
+    "price": 14
+  },
+  {
+    "recipe_id": "684116454",
+    "recipe_image_url": "https://images.unsplash.com/photo-1519869325930-281384150729?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1166&q=80",
+    "name": "Sweet and Sour Pork",
+    "ingredients": [
+      "pork loin",
+      "bell pepper",
+      "pineapple",
+      "carrots",
+      "onion"
+    ],
+    "instructions": "1. Cut pork loin into bite-sized pieces. 2. Sauté pork, bell pepper, and onion in a pan until pork is browned. 3. Add pineapple chunks, sliced carrots, and sweet and sour sauce to the pan. 4. Simmer until pork is cooked and vegetables are tender. 5. Serve over rice.",
+    "cooking_time": "45 minutes",
+    "calcium": "3%",
+    "eat_time": "Dinner",
+    "cooking_difficulty": "Hard",
+
+    "rating": 5,
+    "price": 69
+  },
+  {
+    "recipe_id": "4767464154",
+    "recipe_image_url": "https://images.unsplash.com/photo-1512152272829-e3139592d56f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80",
+    "name": "Spinach and Feta Stuffed Chicken",
+    "ingredients": [
+      "chicken breasts",
+      "spinach",
+      "feta cheese",
+      "garlic powder",
+      "paprika"
+    ],
+    "instructions": "1. Preheat oven to 375°F. 2. Mix chopped spinach, crumbled feta cheese, garlic powder, and paprika in a bowl. 3. Cut a pocket in each chicken breast. 4. Stuff each chicken breast with spinach and feta mixture. 5. Bake chicken in oven for 35-40 minutes. 6. Serve.",
+    "cooking_time": "50 minutes",
+    "calcium": "6%",
+    "eat_time": "Dinner",
+    "cooking_difficulty": "Easy",
+    "rating": 3,
+    "price": 84
+  },
+  {
+    "recipe_id": "6767874454",
+    "recipe_image_url": "https://images.unsplash.com/photo-1528216142275-f64d7a59d8d5?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1194&q=80",
+    "name": "Avocado Toast",
+    "ingredients": [
+      "bread",
+      "avocado",
+      "lemon juice",
+      "salt",
+      "red pepper flakes"
+    ],
+    "instructions": "1. Toast bread. 2. Cut open avocado and remove pit. 3. Mash avocado with a fork. 4. Add lemon juice and salt to mashed avocado. 5. Spread avocado mixture on toast. 6. Sprinkle with red pepper flakes. 7. Serve.",
+    "cooking_time": "10 minutes",
+    "calcium": "2%",
+    "eat_time": "Breakfast",
+    "cooking_difficulty": "Easy",
+
+    "rating": 4,
+    "price": 97
+  },
+  {
+    "recipe_id": "867786765445",
+    "recipe_image_url": "https://images.unsplash.com/photo-1521962347155-662d077f81e9?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80",
+    "name": "Sausage and Egg Breakfast Burrito",
+    "ingredients": [
+      "sausage links",
+      "eggs",
+      "cheddar cheese",
+      "tortillas",
+      "salsa"
+    ],
+    "instructions": "1. Cook sausage links. 2. Scramble eggs in a pan. 3. Heat tortillas in a separate pan. 4. Assemble burrito with scrambled eggs, sliced sausage, shredded cheddar cheese, and salsa. 5. Roll up burrito. 6. Serve.",
+    "cooking_time": "20 minutes",
+    "calcium": "10%",
+    "eat_time": "Breakfast",
+    "cooking_difficulty": "Easy",
+
+    "rating": 4,
+    "price": 24
+  },
+  {
+    "recipe_id": "641867464564",
+    "recipe_image_url": "https://images.unsplash.com/photo-1516685018646-549198525c1b?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80",
+    "name": "Pesto Pasta with Roasted Tomatoes",
+    "ingredients": [
+      "pasta",
+      "basil pesto",
+      "cherry tomatoes",
+      "garlic",
+      "parmesan cheese"
+    ],
+    "instructions": "1. Preheat oven to 400°F. 2. Cut cherry tomatoes in half and place on a baking sheet. 3. Drizzle with olive oil and sprinkle with garlic. 4. Roast tomatoes in oven for 15-20 minutes. 5. Cook pasta according to package instructions. 6. Drain pasta and toss with basil pesto. 7. Serve pasta with roasted tomatoes and grated parmesan cheese.",
+    "cooking_time": "35 minutes",
+    "calcium": "3%",
+    "eat_time": "Dinner",
+    "cooking_difficulty": "Easy",
+
+    "rating": 5,
+    "price": 68
+  },
+  {
+    "recipe_id": "7897674654",
+    "recipe_image_url": "https://images.unsplash.com/photo-1573409157844-6a56035363fc?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1785&q=80",
+    "name": "Greek Salad",
+    "ingredients": [
+      "romaine lettuce",
+      "cucumbers",
+      "tomatoes",
+      "kalamata olives",
+      "feta cheese"
+    ],
+    "instructions": "1. Wash and chop romaine lettuce. 2. Dice cucumbers and tomatoes. 3. Mix lettuce, cucumbers, tomatoes, and kalamata olives in a bowl. 4. Crumble feta cheese over salad. 5. Drizzle with olive oil and lemon juice. 6. Serve.",
+    "cooking_time": "15 minutes",
+    "calcium": "10%",
+    "eat_time": "Lunch",
+    "cooking_difficulty": "Easy",
+
+    "rating": 3,
+    "price": 86
+  },
+  {
+    "recipe_id": "564767874764",
+    "recipe_image_url": "https://images.unsplash.com/photo-1673081849734-98f0969d436b?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1025&q=80",
+    "name": "Chicken and Broccoli Alfredo",
+    "ingredients": [
+      "fettuccine pasta",
+      "chicken breasts",
+      "broccoli",
+      "heavy cream",
+      "parmesan cheese"
+    ],
+    "instructions": "1. Cook fettuccine pasta according to package instructions. 2. Cut chicken breasts into bite-sized pieces and cook in a pan until browned. 3. Blanch broccoli in boiling water for 2-3 minutes. 4. In a separate pan, heat heavy cream and grated parmesan cheese until cheese is melted. 5. Add cooked pasta, chicken, and broccoli to the pan with the Alfredo sauce. 6. Toss until everything is coated in the sauce. 7. Serve.",
+    "cooking_time": "40 minutes",
+    "calcium": "10%",
+    "eat_time": "Dinner",
+    "cooking_difficulty": "Easy",
+    "rating": 1,
+    "price": 98
+  },
+  {
+    "recipe_id": "7898749764747",
+    "recipe_image_url": "https://images.unsplash.com/photo-1611695500858-e6ac19b1ca55?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1171&q=80",
+    "name": "Shrimp Tacos",
+    "ingredients": [
+      "shrimp",
+      "taco shells",
+      "lettuce",
+      "tomatoes",
+      "sour cream"
+    ],
+    "instructions": "1. Heat taco shells in oven according to package instructions. 2. Cook shrimp in a pan until pink. 3. Assemble tacos with lettuce, chopped tomatoes, cooked shrimp, and a dollop of sour cream. 4. Serve.",
+    "cooking_time": "20 minutes",
+    "calcium": "8%",
+    "eat_time": "Dinner",
+    "cooking_difficulty": "Easy",
+
+    "rating": 5,
+    "price": 27
+  },
+  {
+    "recipe_id": "6784978978",
+    "recipe_image_url": "https://images.unsplash.com/photo-1606149186228-4e5ac94a742e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80",
+    "name": "Banana Pancakes",
+    "ingredients": [
+      "flour",
+      "baking powder",
+      "salt",
+      "sugar",
+      "milk",
+      "eggs",
+      "bananas"
+    ],
+    "instructions": "1. In a large bowl, mix together flour, baking powder, salt, and sugar. 2. In a separate bowl, beat together milk and eggs. 3. Mash bananas and add them to the milk mixture. 4. Add wet ingredients to the dry ingredients and mix until just combined. 5. Heat a non-stick pan over medium heat. 6. Pour batter onto the pan, using 1/4 cup of batter for each pancake. 7. Cook until bubbles form on the surface, then flip and cook until both sides are golden brown. 8. Serve with butter and syrup.",
+    "cooking_time": "20 minutes",
+    "calcium": "15%",
+    "eat_time": "Breakfast",
+    "cooking_difficulty": "Easy",
+
+    "rating": 3,
+    "price": 61
+  },
+  {
+    "recipe_id": "6874864765645",
+    "recipe_image_url": "https://images.unsplash.com/photo-1608393189287-0bc2191c7e86?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80",
+    "name": "Veggie Stir-Fry",
+    "ingredients": [
+      "broccoli",
+      "carrots",
+      "mushrooms",
+      "red bell pepper",
+      "onion"
+    ],
+    "instructions": "1. Cut broccoli into small florets. 2. Peel and slice carrots. 3. Slice mushrooms. 4. Cut red bell pepper into thin strips. 5. Cut onion into thin slices. 6. Heat a wok or large skillet over high heat. 7. Add a tablespoon of oil and swirl to coat. 8. Add vegetables to the wok and stir-fry for 3-4 minutes, until vegetables are tender-crisp. 9. Serve over rice or noodles.",
+    "cooking_time": "15 minutes",
+    "calcium": "6%",
+    "eat_time": "Dinner",
+    "cooking_difficulty": "Easy",
+
+    "rating": 4,
+    "price": 38
+  },
+  {
+    "recipe_id": "46541646546545",
+    "recipe_image_url": "https://images.unsplash.com/photo-1547592166-23ac45744acd?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1171&q=80",
+    "name": "Tomato Soup",
+    "ingredients": [
+      "tomatoes",
+      "onion",
+      "garlic",
+      "vegetable broth",
+      "heavy cream"
+    ],
+    "instructions": "1. Cut tomatoes into quarters. 2. Peel and chop onion. 3. Peel and chop garlic. 4. In a large pot, sauté onion and garlic in oil until soft. 5. Add tomatoes and vegetable broth. 6. Bring to a boil, then reduce heat and let simmer for 20-30 minutes. 7. Use an immersion blender to puree soup until smooth. 8. Stir in heavy cream. 9. Serve with crusty bread.",
+    "cooking_time": "30 minutes",
+    "calcium": "4%",
+    "eat_time": "Lunch",
+    "cooking_difficulty": "Easy",
+
+    "rating": 5,
+    "price": 43
+  },
+  {
+    "recipe_id": "674546545675",
+    "recipe_image_url": "https://images.unsplash.com/photo-1678684279246-96e6afb970f2?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1223&q=80",
+    "name": "Beef Stroganoff",
+    "ingredients": ["beef", "onion", "mushrooms", "sour cream", "beef broth"],
+    "instructions": "1. Slice beef into thin strips. 2. Slice onion. 3. Slice mushrooms. 4. In a large skillet, cook beef over medium-high heat until browned. 5. Remove beef from skillet and set aside. 6. In the same skillet, sauté onion and mushrooms until tender. 7. Add beef broth to the skillet and bring to a boil. 8. Reduce heat and simmer for 10-15 minutes. 9. Stir in sour cream until heated through. 10. Serve over egg noodles or rice.",
+    "cooking_time": "30 minutes",
+    "calcium": "5%",
+    "eat_time": "Dinner",
+    "cooking_difficulty": "Easy",
+
+    "rating": 5,
+    "price": 98
+  },
+  {
+    "recipe_id": "5467414674845",
+    "recipe_image_url": "https://images.unsplash.com/photo-1607958996333-41aef7caefaa?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80",
+    "name": "Blueberry Muffins",
+    "ingredients": [
+      "flour",
+      "baking powder",
+      "salt",
+      "sugar",
+      "milk",
+      "eggs",
+      "butter",
+      "blueberries"
+    ],
+    "instructions": "1. Preheat oven to 375°F. 2. In a large bowl, mix together flour, baking powder, salt, and sugar. 3. In a separate bowl, beat together milk, eggs, and melted butter. 4. Add wet ingredients to the dry ingredients and mix until just combined. 5. Fold in blueberries. 6. Grease a muffin tin or line with paper liners. 7. Fill muffin cups with batter, using 1/4 cup of batter for each muffin. 8. Bake for 20-25 minutes, until a toothpick inserted in the center comes out clean. 9. Let cool for 5 minutes before removing from muffin tin. 10. Serve warm or at room temperature.",
+    "cooking_time": "25 minutes",
+    "calcium": "10%",
+    "eat_time": "Breakfast",
+    "cooking_difficulty": "Easy",
+
+    "rating": 6,
+    "price": 41
+  },
+  {
+    "recipe_id": "54646458746545",
+    "recipe_image_url": "https://images.unsplash.com/photo-1468777675496-5782faaea55b?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1174&q=80",
+    "name": "Spinach Salad",
+    "ingredients": [
+      "spinach",
+      "bacon",
+      "hard-boiled eggs",
+      "red onion",
+      "croutons"
+    ],
+    "instructions": "1. Wash spinach leaves and pat dry. 2. Cook bacon until crisp, then crumble. 3. Peel and chop hard-boiled eggs. 4. Thinly slice red onion. 5. Toss spinach leaves with bacon, eggs, and red onion. 6. Top with croutons. 7. Serve with your favorite salad dressing.",
+    "cooking_time": "15 minutes",
+    "calcium": "8%",
+    "eat_time": "Lunch",
+    "cooking_difficulty": "Easy",
+    "rating": 3,
+    "price": 92
+  }
+]
