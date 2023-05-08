@@ -3,7 +3,7 @@ import Banner from "../../components/shared/banner/Banner";
 import { AuthContext } from "../../context/AuthProvider";
 import no_avatar from "../.././assets/no_avatar.png";
 import { useNavigate } from "react-router-dom";
-import AddProduct from "../../components/addProduct/AddProduct";
+import AddRecipes from "../../components/addRecipes/AddRecipes";
 const User = () => {
   const { user, logOutUser, setUser } = useContext(AuthContext);
   console.log(user);
@@ -55,7 +55,7 @@ const User = () => {
           </div>
         </div>
         <div>
-          <AddProduct />
+          <AddRecipes />
         </div>
         </>
       }
