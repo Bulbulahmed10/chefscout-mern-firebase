@@ -21,20 +21,20 @@ const githubProvider = new GithubAuthProvider();
 const AuthProvider = ({ children }) => {
   const [user, setUser] = useState(null);
   const [loading, setLoading] = useState(true);
-  const googleSignIn = async() => {
+  /* const googleSignIn = async() => {
 
     setLoading(true);
     await signInWithPopup(auth, googleProvider);
     
     return auth.currentUser
-  };
-
+  }; */
+/* 
   const githubSignIn = () => {
     setLoading(true);
     return signInWithPopup(auth, githubProvider);
-  };
+  }; */
 
-  const createUser = (email, password) => {
+  const createUser =async (email, password) => {
     setLoading(true);
     return createUserWithEmailAndPassword(auth, email, password);
   };
@@ -75,8 +75,8 @@ const AuthProvider = ({ children }) => {
   const authInfo = {
     user,
     setUser,
-    googleSignIn,
-    githubSignIn,
+    // googleSignIn,
+    // githubSignIn,
     createUser,
     updateUser,
     signInUser,

@@ -24,7 +24,7 @@ const Login = () => {
 
   const from = location?.state?.from?.pathname || "/";
   const navigate = useNavigate();
-  const handleGoogleSignIn = () => {
+ /*  const handleGoogleSignIn = () => {
     googleSignIn()
       .then((result) => {
         const signInUser = result;
@@ -37,9 +37,9 @@ const Login = () => {
         const firebaseNotification = firebaseErrorEdit(err);
         toast.error(firebaseNotification, toastConfig);
       });
-  };
+  }; */
 
-  const handleGithubSignIn = () => {
+ /*  const handleGithubSignIn = () => {
     githubSignIn()
       .then((result) => {
         const signInUser = result.user;
@@ -51,7 +51,7 @@ const Login = () => {
         const firebaseNotification = firebaseErrorEdit(err);
         toast.error(firebaseNotification, toastConfig);
       });
-  };
+  }; */
 
   const handleSignIn = (e) => {
     e.preventDefault();
@@ -141,12 +141,12 @@ const Login = () => {
               </p>
               <div className="flex justify-center my-2 ">
                 <button
-                  onClick={handleGoogleSignIn}
+                  // onClick={handleGoogleSignIn}
                   className="w-8 h-8 bg-blue-500 hover:bg-blue-600 text-white rounded-full flex items-center justify-center mr-2">
                   <BsGoogle />
                 </button>
                 <button
-                  onClick={handleGithubSignIn}
+                  // onClick={handleGithubSignIn}
                   className="w-8 h-8 bg-gray-500 hover:bg-gray-600 text-white rounded-full flex items-center justify-center mr-2">
                   <BsGithub />
                 </button>
