@@ -53,7 +53,7 @@ const updateUserRole = async (req, res) => {
     try {
         const { uid } = req.params
         const { role } = req.body
-
+        console.log(role);
         const user = await User.findOneAndUpdate({ uid: uid }, { role: role }, { new: true });
 
         res.status(200).json(user);
@@ -67,6 +67,6 @@ const updateUserRole = async (req, res) => {
 module.exports = {
     getAllUsers,
     getUserById,
-    createUser,updateUserRole
+    createUser, updateUserRole
 
 }
