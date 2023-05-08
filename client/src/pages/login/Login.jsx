@@ -64,7 +64,7 @@ const Login = () => {
         const loginInUser = result.user;
         toast.success("User Login Successfully", toastConfig);
         const userRole = await getUserRole(loginInUser);
-        console.log({ userRole });
+        loginInUser.role = userRole.role;
         setUser(loginInUser);
         navigate(from, { replace: true });
         setLoading(false);
