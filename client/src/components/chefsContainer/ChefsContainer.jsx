@@ -10,7 +10,8 @@ const ChefsContainer = () => {
   const [isLoading, setIsLoading] = useState(true);
   useEffect(() => {
     fetch(
-      "https://chefscout-server-assignment-10-bulbulahmed10.vercel.app/chefs"
+      // "https://chefscout-server-assignment-10-bulbulahmed10.vercel.app/chefs"
+      "http://localhost:4000/chefs"
     )
       .then((res) => res.json())
       .then((data) => {
