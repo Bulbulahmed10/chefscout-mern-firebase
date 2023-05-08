@@ -6,7 +6,6 @@ import { useNavigate } from "react-router-dom";
 import AddRecipes from "../../components/addRecipes/AddRecipes";
 const User = () => {
   const { user, logOutUser, setUser } = useContext(AuthContext);
-  console.log(user);
   const navigate = useNavigate();
   const handleLogout = () => {
     logOutUser()

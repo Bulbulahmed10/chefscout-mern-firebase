@@ -6,7 +6,6 @@ import Loading from "../components/Loading/Loading";
 
 const Layout = () => {
   const navigationState = useNavigation();
-  console.log(navigationState.state);
   const location = useLocation();
   if (navigationState.state === "loading") {
     
