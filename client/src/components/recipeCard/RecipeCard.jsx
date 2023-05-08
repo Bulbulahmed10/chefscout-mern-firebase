@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import { toast } from "react-hot-toast";
 import { AiOutlineHeart, AiTwotoneHeart, AiFillStar } from "react-icons/ai";
-import { LazyLoadImage } from "react-lazy-load-image-component";
 import Ratings from "react-rating";
 const RecipeCard = ({ recipe }) => {
   const { recipe_image_url, name, ingredients, instructions, rating } = recipe;

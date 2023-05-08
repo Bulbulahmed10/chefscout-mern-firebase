@@ -3,6 +3,7 @@ import Banner from "../../components/shared/banner/Banner";
 import { AuthContext } from "../../context/AuthProvider";
 import no_avatar from "../.././assets/no_avatar.png";
 import { useNavigate } from "react-router-dom";
+import AddProduct from "../../components/addProduct/AddProduct";
 const User = () => {
   const { user, logOutUser, setUser } = useContext(AuthContext);
   console.log(user);
@@ -28,8 +29,6 @@ const User = () => {
       />
       {
         <>
-        
-
         <div>
           <div className="w-full bg-white shadow-md">
             <div className="container mx-auto py-6 px-4">
@@ -56,7 +55,7 @@ const User = () => {
           </div>
         </div>
         <div>
-          djfkdfjkd
+          <AddProduct />
         </div>
         </>
       }

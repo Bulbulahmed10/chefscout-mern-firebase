@@ -1,4 +1,4 @@
-import React, { createContext, useEffect, useState } from "react";
+import { createContext, useEffect, useState } from "react";
 import {
   GithubAuthProvider,
   GoogleAuthProvider,
@@ -6,13 +6,12 @@ import {
   getAuth,
   onAuthStateChanged,
   signInWithEmailAndPassword,
-  signInWithPopup,
   signOut,
   updateProfile,
-  
-  
 } from "firebase/auth";
 import app from "../firebase/firebase.config";
+import { setUserRole } from "../utils/user/fetchUserRole";
+
 const auth = getAuth(app);
 
 export const AuthContext = createContext(null);
@@ -28,15 +27,25 @@ const AuthProvider = ({ children }) => {
     
     return auth.currentUser
   }; */
-/* 
+  /* 
   const githubSignIn = () => {
     setLoading(true);
     return signInWithPopup(auth, githubProvider);
   }; */
 
-  const createUser =async (email, password) => {
+  const createUser = async (email, password) => {
     setLoading(true);
-    return createUserWithEmailAndPassword(auth, email, password);
+
+    await createUserWithEmailAndPassword(auth, email, password);
+    const userRole = await setUserRole({
+      email: auth.currentUser.email,
+      role: "user",
+      uid: auth.currentUser.uid,
+      name: auth.currentUser.displayName,
+      photoURL: auth.currentUser.photoURL,
+    });
+    console.log({ userRole });
+    return auth.currentUser;
   };
 
   const signInUser = (email, password) => {
@@ -56,7 +65,7 @@ const AuthProvider = ({ children }) => {
   }, []);
 
   const updateUser = (userName, userPhotoUrl) => {
-    setLoading(true)
+    setLoading(true);
     return updateProfile(auth.currentUser, {
       displayName: userName,
       photoURL: userPhotoUrl,
@@ -64,13 +73,12 @@ const AuthProvider = ({ children }) => {
   };
 
   const getUserId = () => {
-    getAuth().getUser
-  
-  }
+    getAuth().getUser;
+  };
 
   const logOutUser = () => {
-    return signOut(auth)
-  }
+    return signOut(auth);
+  };
 
   const authInfo = {
     user,
@@ -82,7 +90,7 @@ const AuthProvider = ({ children }) => {
     signInUser,
     loading,
     logOutUser,
-    setLoading
+    setLoading,
   };
   return (
     <AuthContext.Provider value={authInfo}>{children}</AuthContext.Provider>

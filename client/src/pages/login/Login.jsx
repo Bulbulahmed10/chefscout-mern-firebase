@@ -1,4 +1,4 @@
-import React, { useContext, useState } from "react";
+import { useContext, useState } from "react";
 import { BsGithub, BsGoogle } from "react-icons/bs";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { FiEye, FiEyeOff } from "react-icons/fi";
@@ -6,6 +6,7 @@ import Banner from "../../components/shared/banner/Banner";
 import { AuthContext } from "../../context/AuthProvider";
 import { toast } from "react-hot-toast";
 import firebaseErrorEdit from "../../utils/firebaseAuthEdit";
+import { getUserRole } from "../../utils/user/fetchUserRole";
 
 const toastConfig = {
   style: {
@@ -24,7 +25,7 @@ const Login = () => {
 
   const from = location?.state?.from?.pathname || "/";
   const navigate = useNavigate();
- /*  const handleGoogleSignIn = () => {
+  /*  const handleGoogleSignIn = () => {
     googleSignIn()
       .then((result) => {
         const signInUser = result;
@@ -39,7 +40,7 @@ const Login = () => {
       });
   }; */
 
- /*  const handleGithubSignIn = () => {
+  /*  const handleGithubSignIn = () => {
     githubSignIn()
       .then((result) => {
         const signInUser = result.user;
@@ -59,9 +60,11 @@ const Login = () => {
     const email = form.email.value;
     const password = form.password.value;
     signInUser(email, password)
-      .then((result) => {
+      .then(async (result) => {
         const loginInUser = result.user;
         toast.success("User Login Successfully", toastConfig);
+        const userRole = await getUserRole(loginInUser);
+        console.log({ userRole });
         setUser(loginInUser);
         navigate(from, { replace: true });
         setLoading(false);
@@ -92,7 +95,8 @@ const Login = () => {
             <div className="mb-4">
               <label
                 htmlFor="email"
-                className="block text-gray-700 font-medium mb-2">
+                className="block text-gray-700 font-medium mb-2"
+              >
                 Email
               </label>
               <div className="relative">
@@ -109,7 +113,8 @@ const Login = () => {
             <div className="mb-6">
               <label
                 htmlFor="password"
-                className="block text-gray-700 font-medium mb-2">
+                className="block text-gray-700 font-medium mb-2"
+              >
                 Password
               </label>
               <div className="relative">
@@ -123,14 +128,16 @@ const Login = () => {
                 />
                 <div
                   className="absolute top-1/2 right-4 transform -translate-y-1/2 cursor-pointer"
-                  onClick={handlePasswordToggle}>
+                  onClick={handlePasswordToggle}
+                >
                   {showPassword ? <FiEye /> : <FiEyeOff />}
                 </div>
               </div>
             </div>
             <button
               type="submit"
-              className="w-full h-10 bg-blue-500 hover:bg-blue-600 text-white font-medium py-2 px-4 rounded-lg transition duration-300 ">
+              className="w-full h-10 bg-blue-500 hover:bg-blue-600 text-white font-medium py-2 px-4 rounded-lg transition duration-300 "
+            >
               Login
             </button>
           </form>
@@ -142,18 +149,21 @@ const Login = () => {
               <div className="flex justify-center my-2 ">
                 <button
                   // onClick={handleGoogleSignIn}
-                  className="w-8 h-8 bg-blue-500 hover:bg-blue-600 text-white rounded-full flex items-center justify-center mr-2">
+                  className="w-8 h-8 bg-blue-500 hover:bg-blue-600 text-white rounded-full flex items-center justify-center mr-2"
+                >
                   <BsGoogle />
                 </button>
                 <button
                   // onClick={handleGithubSignIn}
-                  className="w-8 h-8 bg-gray-500 hover:bg-gray-600 text-white rounded-full flex items-center justify-center mr-2">
+                  className="w-8 h-8 bg-gray-500 hover:bg-gray-600 text-white rounded-full flex items-center justify-center mr-2"
+                >
                   <BsGithub />
                 </button>
               </div>
               <Link
                 to="/register"
-                className="text-blue-500 hover:text-blue-600 text-sm">
+                className="text-blue-500 hover:text-blue-600 text-sm"
+              >
                 Don't have an account? Register here
               </Link>
             </div>
