@@ -8,12 +8,14 @@ import { getUserRole, updateUserRole } from "../../utils/user/fetchUserRole";
 import admin from "../../assets/admin.png";
 import moderator from "../../assets/moderator.png";
 import { Tooltip } from "react-tooltip";
+import SingleRecipeInfoTable from "../../components/singleRecipeInfoTable/SingleRecipeInfoTable";
 
 const User = () => {
   const { user, logOutUser, setUser } = useContext(AuthContext);
   const [role, setRole] = useState("");
   const [isModeratorFormShow, setIsModeratorFormShow] = useState(false);
   const [isAddRecipeFormShow, setIsAddRecipeFormShow] = useState(false);
+  const [recipes, setRecipes] = useState([]);
   const navigate = useNavigate();
   const handleLogout = () => {
     logOutUser()
@@ -25,6 +27,8 @@ const User = () => {
         console.log(err);
       });
   };
+
+
 
   useEffect(() => {
     const fetchUser = async () => {
@@ -53,6 +57,13 @@ const User = () => {
     setIsAddRecipeFormShow(!isAddRecipeFormShow);
     setIsModeratorFormShow(false);
   };
+
+  useEffect(() => {
+    fetch("http://localhost:4000/recipes")
+      .then((res) => res.json())
+      .then((data) => setRecipes(data));
+  }, []);
+
 
   return (
     <div>
@@ -134,7 +145,7 @@ const User = () => {
                   <label
                     htmlFor="sellerId"
                     className="block text-gray-700 font-medium mb-2">
-                    Seller ID
+                    User ID
                   </label>
                   <div>
                     <input
@@ -157,6 +168,28 @@ const User = () => {
           )}
         </div>
         {isAddRecipeFormShow && <AddRecipes />}
+      </div>
+      <div>
+      <h4 className=" text-end mr-28 text-lg py-3 font-mono">Total Recipes: {recipes && recipes.length } </h4>
+        <div className="overflow-x-auto w-[85%] h-[800px] mb-10 m-auto">
+       
+          <table className="table w-full">
+            <thead >
+              <tr>
+                <th></th>
+                <th>Serial Number</th>
+                <th>Recipe Name</th>
+                <th>Price</th>
+                <th>Recipe ID</th>
+                <th>Action</th>
+              </tr>
+            </thead>
+            {recipes &&
+              recipes.map((recipe, index) => (
+                <SingleRecipeInfoTable key={recipe.recipe_id} recipe={recipe} index={index} />
+              ))}
+          </table>
+        </div>
       </div>
     </div>
   );

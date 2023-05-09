@@ -1,4 +1,15 @@
 import React from "react";
+import { toast } from "react-hot-toast";
+
+const toastConfig = {
+  style: {
+    borderRadius: "10px",
+    background: "#333",
+    color: "#fff",
+    textAlign: "center",
+  },
+  duration: 5000,
+};
 
 const AddRecipes = () => {
   const handleAddRecipe = (e) => {
@@ -32,7 +43,7 @@ const AddRecipes = () => {
       recipe_image_url,
     };
 
-    const updateChef = {chef_id, recipe_id}
+    const updateChef = { chef_id, recipe_id };
 
     fetch("http://localhost:4000/recipe", {
       method: "POST",
@@ -40,20 +51,25 @@ const AddRecipes = () => {
       body: JSON.stringify(recipeInfo),
     })
       .then((res) => res.json())
-      .then((data) => console.log(data));
+      .then((data) => {
+        toast.success("Recipe added successful!", toastConfig);
+        form.reset();
+      });
 
     fetch("http://localhost:4000/chef", {
       method: "PUT",
-      headers: {"content-type": "application/json"},
-      body: JSON.stringify(updateChef)
-    })
+      headers: { "content-type": "application/json" },
+      body: JSON.stringify(updateChef),
+    });
   };
 
   return (
     <form
       onSubmit={handleAddRecipe}
       className="bg-white shadow-md px-8 py-6 my-6">
-      <h2 className="text-2xl font-bold mb-6 text-center font-Raleway">Add Recipe</h2>
+      <h2 className="text-2xl font-bold mb-6 text-center font-Raleway">
+        Add Recipe
+      </h2>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 lg:gap-3">
         <div className="mb-4">
           <label
@@ -136,7 +152,7 @@ const AddRecipes = () => {
               name="ingredients"
               required
               className="w-full border-gray-300 border-2 focus:outline-none focus:ring-2 focus:ring-blue-500 rounded-lg py-2 px-4"
-              placeholder="Enter ingredients"
+              placeholder="ingredients must be coma ( , ) separated"
             />
           </div>
         </div>
