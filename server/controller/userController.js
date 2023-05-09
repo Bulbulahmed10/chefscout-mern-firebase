@@ -14,11 +14,8 @@ const getAllUsers = async (req, res) => {
 // get user by id
 const getUserById = async (req, res) => {
     try {
-
         const { uid } = req.params
-
         const user = await User.findOne({ uid: uid });
-        console.log(user);
         res.status(200).json(user);
 
     } catch (error) {
@@ -28,7 +25,6 @@ const getUserById = async (req, res) => {
 
 // create user
 const createUser = async (req, res) => {
-    console.log(req.body);
     try {
 
         const { name,

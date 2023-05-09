@@ -16,6 +16,7 @@ const User = () => {
   const [isModeratorFormShow, setIsModeratorFormShow] = useState(false);
   const [isAddRecipeFormShow, setIsAddRecipeFormShow] = useState(false);
   const [recipes, setRecipes] = useState([]);
+
   const navigate = useNavigate();
   const handleLogout = () => {
     logOutUser()
@@ -27,8 +28,6 @@ const User = () => {
         console.log(err);
       });
   };
-
-
 
   useEffect(() => {
     const fetchUser = async () => {
@@ -64,6 +63,23 @@ const User = () => {
       .then((data) => setRecipes(data));
   }, []);
 
+  
+
+  const handleDelete = (recipeAndChefId) => {
+    fetch("http://localhost:4000/recipe", {
+      method: "DELETE",
+      headers: { "content-type": "application/json" },
+      body: JSON.stringify(recipeAndChefId)
+    })
+      .then((res) => res.json())
+      .then((data) => console.log(data));
+
+      fetch("http://localhost:4000/chef", {
+        method: "PATCH",
+        headers: {"content-type": "application/json"},
+        body: JSON.stringify(recipeAndChefId)
+      })
+  };
 
   return (
     <div>
@@ -170,23 +186,31 @@ const User = () => {
         {isAddRecipeFormShow && <AddRecipes />}
       </div>
       <div>
-      <h4 className=" text-end mr-28 text-lg py-3 font-mono">Total Recipes: {recipes && recipes.length } </h4>
+        <h4 className=" text-end mr-28 text-lg py-3 font-mono">
+          Total Recipes: {recipes && recipes.length}{" "}
+        </h4>
         <div className="overflow-x-auto w-[85%] h-[800px] mb-10 m-auto">
-       
           <table className="table w-full">
-            <thead >
+            <thead>
               <tr>
                 <th></th>
                 <th>Serial Number</th>
                 <th>Recipe Name</th>
-                <th>Price</th>
+                <th>Chef Name</th>
+                <th>Chef ID</th>
                 <th>Recipe ID</th>
+                <th>Price</th>
                 <th>Action</th>
               </tr>
             </thead>
             {recipes &&
               recipes.map((recipe, index) => (
-                <SingleRecipeInfoTable key={recipe.recipe_id} recipe={recipe} index={index} />
+                <SingleRecipeInfoTable
+                  key={recipe.recipe_id}
+                  recipe={recipe}
+                  index={index}
+                  handleDelete={handleDelete}
+                />
               ))}
           </table>
         </div>

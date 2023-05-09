@@ -1,7 +1,22 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 
-const SingleRecipeInfoTable = ({ recipe, index }) => {
+const SingleRecipeInfoTable = ({ recipe, index, handleDelete }) => {
   const { recipe_image_url, name, recipe_id, price } = recipe;
+  const [chef, setChef] = useState({});
+  useEffect(() => {
+    fetch("http://localhost:4000/chefs")
+      .then((res) => res.json())
+      .then((data) => {
+        const filteredData = data.find((item) =>
+          item.recipes_id.includes(recipe_id)
+        );
+        setChef({
+          chef_id: filteredData?.chef_id,
+          chef_name: filteredData?.chef_name,
+        });
+      });
+  }, []);
   return (
     <tbody>
       <tr>
@@ -22,16 +37,25 @@ const SingleRecipeInfoTable = ({ recipe, index }) => {
             </div>
           </div>
         </td>
+        <td className="text-blue-500">
+          <Link to={`/chef/${chef && chef.chef_id}`}>
+            {chef && chef.chef_name}
+          </Link>
+        </td>
+        <td> {chef && chef.chef_id} </td>
+        <td>{recipe_id}</td>
+
         <td>
           ${price && price}
           <br />
         </td>
-        <td>{recipe_id}</td>
         <td>
           <button className="btn btn-ghost btn-xs bg-blue-500 text-white tracking-wide ">
             Update
           </button>
-          <button className="btn btn-ghost btn-xs bg-red-500 text-white tracking-wide ml-3">
+          <button
+            onClick={() => handleDelete({recipe_id, chef_id:chef.chef_id})}
+            className="btn btn-ghost btn-xs bg-red-500 text-white tracking-wide ml-3">
             Delete
           </button>
         </td>

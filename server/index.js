@@ -54,6 +54,13 @@ async function run() {
       res.send(result);
     });
 
+    app.delete("/recipe", async (req, res) => {
+      const recipeAndChefId = req.body;
+      const query = { recipe_id: recipeAndChefId.recipe_id };
+      const result = await recipesCollection.deleteOne(query);
+      res.send(result);
+    });
+
     app.get("/chefs", async (req, res) => {
       const cursor = chefsCollection.find();
       const result = await cursor.toArray();
@@ -73,6 +80,17 @@ async function run() {
         updatedChef,
         options
       );
+      res.send(result);
+    });
+
+    app.patch("/chef", async (req, res) => {
+      const recipeAndChefId = req.body;
+      const query = { chef_id: recipeAndChefId.chef_id };
+      const option = { upsert: true };
+      const updateChef = {
+        $pull: { recipes_id: recipeAndChefId.recipe_id },
+      };
+      const result = await chefsCollection.updateOne(query, updateChef, option);
       res.send(result);
     });
 
