@@ -12,6 +12,8 @@ import { Tooltip } from "react-tooltip";
 const User = () => {
   const { user, logOutUser, setUser } = useContext(AuthContext);
   const [role, setRole] = useState("");
+  const [isModeratorFormShow, setIsModeratorFormShow] = useState(false);
+  const [isAddRecipeFormShow, setIsAddRecipeFormShow] = useState(false);
   const navigate = useNavigate();
   const handleLogout = () => {
     logOutUser()
@@ -41,6 +43,17 @@ const User = () => {
     const role = "moderator";
     const userRole = await updateUserRole(sellerId, role);
   };
+
+  const handleModeratorFormShow = () => {
+    setIsModeratorFormShow(!isModeratorFormShow);
+    setIsAddRecipeFormShow(false);
+  };
+
+  const handleRecipeFormShow = () => {
+    setIsAddRecipeFormShow(!isAddRecipeFormShow);
+    setIsModeratorFormShow(false);
+  };
+
   return (
     <div>
       <Banner
@@ -90,13 +103,32 @@ const User = () => {
           </div>
         </div>
         <div>
-          {role && role === "admin" && (
+          <div className="flex items-center justify-center bg-white">
+            <div className="tabs gap-6 mb-14">
+              {role && role === "admin" && (
+                <a
+                  onClick={handleModeratorFormShow}
+                  className={`tab tab-bordered text-xl font-Raleway font-bold  tracking-wider text-blue-500 ${
+                    isModeratorFormShow && "tab-active"
+                  }`}>
+                  Add Moderator
+                </a>
+              )}
+              {(role === "moderator" || role === "admin") && (
+                <a
+                  onClick={handleRecipeFormShow}
+                  className={`tab tab-bordered text-xl font-Raleway font-bold  tracking-wider text-blue-500 ${
+                    isAddRecipeFormShow && "tab-active"
+                  }`}>
+                  Add Recipe
+                </a>
+              )}
+            </div>
+          </div>
+          {isModeratorFormShow && (
             <form
               onSubmit={handleAddModerator}
-              className="bg-white shadow-md px-8 py-6 my-6">
-              <h2 className="text-2xl font-bold mb-6 text-center font-Raleway">
-                Add Moderator
-              </h2>
+              className="bg-white shadow-md px-8 py-6 my-6 flex flex-col ">
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 lg:gap-3">
                 <div className="mb-4">
                   <label
@@ -118,13 +150,13 @@ const User = () => {
               </div>
               <button
                 type="submit"
-                className="w-full h-10 bg-blue-500 hover:bg-blue-600 text-white font-medium py-2 px-4 rounded-lg transition duration-300 ">
+                className=" h-10 bg-blue-500 hover:bg-blue-600 text-white font-medium py-2 px-4 rounded-lg transition duration-300 ">
                 Add Moderator
               </button>
             </form>
           )}
         </div>
-        {(role === "moderator" || role === "admin") && <AddRecipes />}
+        {isAddRecipeFormShow && <AddRecipes />}
       </div>
     </div>
   );
