@@ -6,6 +6,7 @@ import {
   getAuth,
   onAuthStateChanged,
   signInWithEmailAndPassword,
+  signInWithPopup,
   signOut,
   updateProfile,
 } from "firebase/auth";
@@ -20,22 +21,20 @@ const githubProvider = new GithubAuthProvider();
 const AuthProvider = ({ children }) => {
   const [user, setUser] = useState(null);
   const [loading, setLoading] = useState(true);
-  /* const googleSignIn = async() => {
+  const googleSignIn = async() => {
 
     setLoading(true);
     await signInWithPopup(auth, googleProvider);
-    
     return auth.currentUser
-  }; */
-  /* 
+  }; 
+ 
   const githubSignIn = () => {
     setLoading(true);
     return signInWithPopup(auth, githubProvider);
-  }; */
+  };
 
   const createUser = async (email, password) => {
     setLoading(true);
-
     await createUserWithEmailAndPassword(auth, email, password);
     const userRole = await setUserRole({
       email: auth.currentUser.email,
@@ -44,7 +43,6 @@ const AuthProvider = ({ children }) => {
       name: auth.currentUser.displayName,
       photoURL: auth.currentUser.photoURL,
     });
-    console.log({ userRole });
     return auth.currentUser;
   };
 
@@ -72,9 +70,7 @@ const AuthProvider = ({ children }) => {
     });
   };
 
-  const getUserId = () => {
-    getAuth().getUser;
-  };
+
 
   const logOutUser = () => {
     return signOut(auth);
@@ -83,8 +79,8 @@ const AuthProvider = ({ children }) => {
   const authInfo = {
     user,
     setUser,
-    // googleSignIn,
-    // githubSignIn,
+    googleSignIn,
+    githubSignIn,
     createUser,
     updateUser,
     signInUser,

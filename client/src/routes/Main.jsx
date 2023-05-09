@@ -40,6 +40,7 @@ const router = createBrowserRouter([
             <User />
           </ProtectedRoutes>
         ),
+        
       },
       {
         path: "/login",

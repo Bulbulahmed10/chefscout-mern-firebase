@@ -34,20 +34,6 @@ const AddRecipes = () => {
 
     const updateChef = {chef_id, recipe_id}
 
-    // console.log({
-    //   recipe_id,
-    //   name,
-    //   instructions,
-    //   ingredients,
-    //   time,
-    //   calcium,
-    //   eat_time,
-    //   cooking_difficulty,
-    //   rating,
-    //   price,
-    //   recipe_image_url,
-    // });
-
     fetch("http://localhost:4000/recipe", {
       method: "POST",
       headers: { "content-type": "application/json" },
@@ -67,7 +53,7 @@ const AddRecipes = () => {
     <form
       onSubmit={handleAddRecipe}
       className="bg-white shadow-md px-8 py-6 my-6">
-      <h2 className="text-2xl font-bold mb-6 text-center">Add Recipe</h2>
+      <h2 className="text-2xl font-bold mb-6 text-center font-Raleway">Add Recipe</h2>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 lg:gap-3">
         <div className="mb-4">
           <label
@@ -277,7 +263,7 @@ const AddRecipes = () => {
       <button
         type="submit"
         className="w-full h-10 bg-blue-500 hover:bg-blue-600 text-white font-medium py-2 px-4 rounded-lg transition duration-300 ">
-        Add Recipes
+        Add Recipe
       </button>
     </form>
   );

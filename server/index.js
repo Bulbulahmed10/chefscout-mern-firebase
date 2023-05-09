@@ -73,7 +73,6 @@ async function run() {
         updatedChef,
         options
       );
-      console.log(result);
       res.send(result);
     });
 
