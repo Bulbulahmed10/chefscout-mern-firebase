@@ -1,18 +1,12 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
+import { RecipesAndChefsContext } from "../../layouts/Layout";
 
 const PopularMenuItems = () => {
-  const [recipes, setRecipes] = useState([]);
-  useEffect(() => {
-    fetch(
-      "https://chefscout-server-assignment-10-bulbulahmed10.vercel.app/recipes"
-    )
-      .then((res) => res.json())
-      .then((data) => setRecipes(data.slice(0, 8)));
-  }, []);
-
+  const {recipes} = useContext(RecipesAndChefsContext)
+  
   return (
     <div className="w-full max-w-[1280px] m-auto px-4">
-      <h3 className="text-4xl mt-16 lg:mt-44 lg:text-6xl font-CoveredByYourGrace font-semibold tracking-wider text-center">
+      <h3 className="text-4xl mt-16 lg:mt-24 lg:text-6xl font-CoveredByYourGrace font-semibold tracking-wider text-center">
         Popular Recipes
       </h3>
       <p className="text-center mt-4 font-Raleway font-semibold w-full px-4 m-auto">
@@ -23,7 +17,7 @@ const PopularMenuItems = () => {
       <div className="mt-12">
         <div className="grid md:grid-cols-1 lg:grid-cols-2 gap-3">
           {recipes &&
-            recipes.map((singleRecipe) => {
+            recipes.slice(4, 14).map((singleRecipe) => {
               const { recipe_id, name, price, recipe_image_url, instructions } =
                 singleRecipe;
               return (

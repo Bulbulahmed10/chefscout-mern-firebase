@@ -3,7 +3,7 @@ import Banner from "../../components/shared/banner/Banner";
 import { AuthContext } from "../../context/AuthProvider";
 import no_avatar from "../.././assets/no_avatar.png";
 import { useNavigate } from "react-router-dom";
-import AddRecipes from "../../components/addRecipes/AddRecipes";
+import AddRecipe from "../../components/addRecipe/AddRecipe";
 import { getUserRole, updateUserRole } from "../../utils/user/fetchUserRole";
 import admin from "../../assets/admin.png";
 import moderator from "../../assets/moderator.png";
@@ -17,7 +17,7 @@ const User = () => {
   const [role, setRole] = useState("");
   const [isModeratorFormShow, setIsModeratorFormShow] = useState(false);
   const [isAddRecipeFormShow, setIsAddRecipeFormShow] = useState(false);
-
+  const [recipeUpdateForm, setRecipeUpdateForm] = useState(false);
   const navigate = useNavigate();
   const handleLogout = () => {
     logOutUser()
@@ -58,7 +58,7 @@ const User = () => {
     setIsModeratorFormShow(false);
   };
 
-  const handleDelete = (recipeAndChefId) => {
+  const handleDeleteRecipe = (recipeAndChefId) => {
     fetch("http://localhost:4000/recipe", {
       method: "DELETE",
       headers: { "content-type": "application/json" },
@@ -79,6 +79,16 @@ const User = () => {
       headers: { "content-type": "application/json" },
       body: JSON.stringify(recipeAndChefId),
     });
+  };
+
+  const handleUpdateRecipe = (recipeId) => {
+    setIsAddRecipeFormShow(true);
+    setRecipeUpdateForm(true);
+  };
+
+  const handleUpdateRecipeCancel = () => {
+    setRecipeUpdateForm(false);
+    setIsAddRecipeFormShow(false)
   };
 
   return (
@@ -147,7 +157,7 @@ const User = () => {
                   className={`tab tab-bordered text-xl font-Raleway font-bold  tracking-wider text-blue-500 ${
                     isAddRecipeFormShow && "tab-active"
                   }`}>
-                  Add Recipe
+                  {recipeUpdateForm ? "Update Recipe" : "Add Recipe"}
                 </a>
               )}
             </div>
@@ -183,11 +193,17 @@ const User = () => {
             </form>
           )}
         </div>
-        {isAddRecipeFormShow && <AddRecipes />}
+        {isAddRecipeFormShow && (
+          <AddRecipe
+            recipeUpdateForm={recipeUpdateForm}
+            setRecipeUpdateForm={setRecipeUpdateForm}
+            handleUpdateRecipeCancel={handleUpdateRecipeCancel}
+          />
+        )}
       </div>
       <div>
         <h4 className=" text-end mr-28 text-lg py-3 font-mono">
-          Total Recipes: {recipes && recipes.length}{" "}
+          Total Recipes: {recipes && recipes.length}
         </h4>
         <div className="overflow-x-auto w-[85%] h-[800px] mb-10 m-auto">
           <table className="table w-full">
@@ -209,7 +225,8 @@ const User = () => {
                   key={recipe.recipe_id}
                   recipe={recipe}
                   index={index}
-                  handleDelete={handleDelete}
+                  handleDeleteRecipe={handleDeleteRecipe}
+                  handleUpdateRecipe={handleUpdateRecipe}
                 />
               ))}
           </table>

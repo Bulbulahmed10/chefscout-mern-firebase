@@ -2,8 +2,13 @@ import React, { useContext, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { RecipesAndChefsContext } from "../../layouts/Layout";
 
-const SingleRecipeInfoTable = ({ recipe, index, handleDelete }) => {
-  const { chefs} = useContext(RecipesAndChefsContext);
+const SingleRecipeInfoTable = ({
+  recipe,
+  index,
+  handleDeleteRecipe,
+  handleUpdateRecipe,
+}) => {
+  const { chefs } = useContext(RecipesAndChefsContext);
   const { recipe_image_url, name, recipe_id, price } = recipe;
   const [chef, setChef] = useState({});
   useEffect(() => {
@@ -48,11 +53,15 @@ const SingleRecipeInfoTable = ({ recipe, index, handleDelete }) => {
           <br />
         </td>
         <td>
-          <button className="btn btn-ghost btn-xs bg-blue-500 text-white tracking-wide ">
+          <button
+            onClick={() => handleUpdateRecipe(recipe_id)}
+            className="btn btn-ghost btn-xs bg-blue-500 text-white tracking-wide ">
             Update
           </button>
           <button
-            onClick={() => handleDelete({ recipe_id, chef_id: chef.chef_id })}
+            onClick={() =>
+              handleDeleteRecipe({ recipe_id, chef_id: chef.chef_id })
+            }
             className="btn btn-ghost btn-xs bg-red-500 text-white tracking-wide ml-3">
             Delete
           </button>

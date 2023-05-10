@@ -11,7 +11,11 @@ const toastConfig = {
   duration: 5000,
 };
 
-const AddRecipes = () => {
+const AddRecipe = ({
+  recipeUpdateForm,
+  setRecipeUpdateForm,
+  handleUpdateRecipeCancel,
+}) => {
   const handleAddRecipe = (e) => {
     e.preventDefault();
     const form = e.target;
@@ -68,43 +72,47 @@ const AddRecipes = () => {
       onSubmit={handleAddRecipe}
       className="bg-white shadow-md px-8 py-6 my-6">
       <h2 className="text-2xl font-bold mb-6 text-center font-Raleway">
-        Add Recipe
+        {recipeUpdateForm ? "Update Recipe" : "Add Recipe"}
       </h2>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 lg:gap-3">
-        <div className="mb-4">
-          <label
-            htmlFor="recipeId"
-            className="block text-gray-700 font-medium mb-2">
-            Recipe ID
-          </label>
-          <div>
-            <input
-              type="text"
-              id="recipeId"
-              name="recipeId"
-              className="w-full border-gray-300 border-2 focus:outline-none focus:ring-2 focus:ring-blue-500 rounded-lg py-2 px-4"
-              placeholder="Enter Recipe ID"
-              required
-            />
-          </div>
-        </div>
-        <div className="mb-4">
-          <label
-            htmlFor="sellerId"
-            className="block text-gray-700 font-medium mb-2">
-            Seller ID
-          </label>
-          <div>
-            <input
-              type="text"
-              id="sellerId"
-              name="sellerId"
-              className="w-full border-gray-300 border-2 focus:outline-none focus:ring-2 focus:ring-blue-500 rounded-lg py-2 px-4"
-              placeholder="Enter Seller Id"
-              required
-            />
-          </div>
-        </div>
+        {!recipeUpdateForm && (
+          <>
+            <div className="mb-4">
+              <label
+                htmlFor="recipeId"
+                className="block text-gray-700 font-medium mb-2">
+                Recipe ID
+              </label>
+              <div>
+                <input
+                  type="text"
+                  id="recipeId"
+                  name="recipeId"
+                  className="w-full border-gray-300 border-2 focus:outline-none focus:ring-2 focus:ring-blue-500 rounded-lg py-2 px-4"
+                  placeholder="Enter Recipe ID"
+                  required
+                />
+              </div>
+            </div>
+            <div className="mb-4">
+              <label
+                htmlFor="sellerId"
+                className="block text-gray-700 font-medium mb-2">
+                Seller ID
+              </label>
+              <div>
+                <input
+                  type="text"
+                  id="sellerId"
+                  name="sellerId"
+                  className="w-full border-gray-300 border-2 focus:outline-none focus:ring-2 focus:ring-blue-500 rounded-lg py-2 px-4"
+                  placeholder="Enter Seller Id"
+                  required
+                />
+              </div>
+            </div>
+          </>
+        )}
         <div className="mb-4">
           <label
             htmlFor="recipeName"
@@ -276,13 +284,20 @@ const AddRecipes = () => {
           </div>
         </div>
       </div>
-      <button
-        type="submit"
-        className="w-full h-10 bg-blue-500 hover:bg-blue-600 text-white font-medium py-2 px-4 rounded-lg transition duration-300 ">
-        Add Recipe
-      </button>
+      <div className="flex gap-4">
+        <p
+          onClick={handleUpdateRecipeCancel}
+          className="w-fit h-10 bg-red-600 hover:bg-red-700 text-white font-medium py-2 px-4 rounded-lg transition duration-300 cursor-pointer">
+          {recipeUpdateForm ? "Cancel Update" : "Cancel Add"}
+        </p>
+        <button
+          type="submit"
+          className="w-fit h-10 bg-blue-500 hover:bg-blue-600 text-white font-medium py-2 px-4 rounded-lg transition duration-300 ">
+          {recipeUpdateForm ? "Update recipe" : "Add Recipe"}
+        </button>
+      </div>
     </form>
   );
 };
 
-export default AddRecipes;
+export default AddRecipe;
