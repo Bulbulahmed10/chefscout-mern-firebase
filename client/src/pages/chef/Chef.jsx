@@ -1,44 +1,23 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import Banner from "../../components/shared/banner/Banner";
 import { useParams } from "react-router-dom";
 import { GrUserExpert } from "react-icons/gr";
 import { MdOutlineFastfood } from "react-icons/md";
 import { BiLike } from "react-icons/bi";
 import RecipeCard from "../../components/recipeCard/RecipeCard";
-import { LazyLoadImage } from "react-lazy-load-image-component";
 import Loading from "../../components/Loading/Loading";
+import { RecipesAndChefsContext } from "../../layouts/Layout";
 
 const Chef = () => {
+  const { recipes, chefs } = useContext(RecipesAndChefsContext);
   const params = useParams();
-  const [chefs, setChefs] = useState([]);
   const [chef, setChef] = useState({});
-  const [recipes, setRecipes] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    fetch(
-      // "https://chefscout-server-assignment-10-bulbulahmed10.vercel.app/chefs"
-      "http://localhost:4000/chefs"
-    )
-      .then((res) => res.json())
-      .then((data) => {
-        setChefs(data);
-        const findChef = data.find((chef) => chef.chef_id === params.id) || {};
-        setChef(findChef);
-        setIsLoading(false);
-      });
-  }, []);
-
-  useEffect(() => {
-    fetch(
-      // "https://chefscout-server-assignment-10-bulbulahmed10.vercel.app/recipes"
-      "http://localhost:4000/recipes"
-    )
-      .then((res) => res.json())
-      .then((data) => {
-        setRecipes(data);
-        setIsLoading(false);
-      });
+    const findChef = chefs.find((chef) => chef.chef_id === params.id) || {};
+    setChef(findChef);
+    setIsLoading(false);
   }, []);
 
   const filteredRecipes =

@@ -1,21 +1,19 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import { RecipesAndChefsContext } from "../../layouts/Layout";
 
 const SingleRecipeInfoTable = ({ recipe, index, handleDelete }) => {
+  const { chefs} = useContext(RecipesAndChefsContext);
   const { recipe_image_url, name, recipe_id, price } = recipe;
   const [chef, setChef] = useState({});
   useEffect(() => {
-    fetch("http://localhost:4000/chefs")
-      .then((res) => res.json())
-      .then((data) => {
-        const filteredData = data.find((item) =>
-          item.recipes_id.includes(recipe_id)
-        );
-        setChef({
-          chef_id: filteredData?.chef_id,
-          chef_name: filteredData?.chef_name,
-        });
-      });
+    const filteredData = chefs.find((item) =>
+      item.recipes_id.includes(recipe_id)
+    );
+    setChef({
+      chef_id: filteredData?.chef_id,
+      chef_name: filteredData?.chef_name,
+    });
   }, []);
   return (
     <tbody>
@@ -54,7 +52,7 @@ const SingleRecipeInfoTable = ({ recipe, index, handleDelete }) => {
             Update
           </button>
           <button
-            onClick={() => handleDelete({recipe_id, chef_id:chef.chef_id})}
+            onClick={() => handleDelete({ recipe_id, chef_id: chef.chef_id })}
             className="btn btn-ghost btn-xs bg-red-500 text-white tracking-wide ml-3">
             Delete
           </button>

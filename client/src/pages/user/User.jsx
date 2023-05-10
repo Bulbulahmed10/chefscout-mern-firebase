@@ -9,13 +9,15 @@ import admin from "../../assets/admin.png";
 import moderator from "../../assets/moderator.png";
 import { Tooltip } from "react-tooltip";
 import SingleRecipeInfoTable from "../../components/singleRecipeInfoTable/SingleRecipeInfoTable";
+import { RecipesAndChefsContext } from "../../layouts/Layout";
 
 const User = () => {
+  const {recipes} = useContext(RecipesAndChefsContext)
   const { user, logOutUser, setUser } = useContext(AuthContext);
   const [role, setRole] = useState("");
   const [isModeratorFormShow, setIsModeratorFormShow] = useState(false);
   const [isAddRecipeFormShow, setIsAddRecipeFormShow] = useState(false);
-  const [recipes, setRecipes] = useState([]);
+
 
   const navigate = useNavigate();
   const handleLogout = () => {
@@ -56,14 +58,6 @@ const User = () => {
     setIsAddRecipeFormShow(!isAddRecipeFormShow);
     setIsModeratorFormShow(false);
   };
-
-  useEffect(() => {
-    fetch("http://localhost:4000/recipes")
-      .then((res) => res.json())
-      .then((data) => setRecipes(data));
-  }, []);
-
-  
 
   const handleDelete = (recipeAndChefId) => {
     fetch("http://localhost:4000/recipe", {

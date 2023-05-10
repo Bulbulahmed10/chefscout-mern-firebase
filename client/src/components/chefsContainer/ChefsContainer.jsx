@@ -1,27 +1,22 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import ChefCard from "../chefCard/chefCard";
 import Loading from "../Loading/Loading";
+import { RecipesAndChefsContext } from "../../layouts/Layout";
 
 const ChefsContainer = () => {
-  const [chefs, setChefs] = useState([]);
+  const {chefs, setChefs} = useContext(RecipesAndChefsContext)
+
   const [filteredChefs, setFilteredChefs] = useState([]);
   const [chefCountryCategories, setChefCountryCategories] = useState([]);
   const [activeButtonId, setActiveButtonId] = useState(null);
   const [isLoading, setIsLoading] = useState(true);
-  useEffect(() => {
-    fetch(
-      // "https://chefscout-server-assignment-10-bulbulahmed10.vercel.app/chefs"
-      "http://localhost:4000/chefs"
-    )
-      .then((res) => res.json())
-      .then((data) => {
-        setChefs(data);
-        setFilteredChefs(data);
-        generateTargetCountryData(data);
-        setIsLoading(false);
-      });
-  }, []);
 
+  useEffect(() => {
+    setFilteredChefs(chefs)
+    generateTargetCountryData(chefs)
+    setIsLoading(false)
+  }, [chefs])
+  
   useEffect(() => {
     fetch(
       "https://chefscout-server-assignment-10-bulbulahmed10.vercel.app/countryFoodName"
@@ -30,8 +25,8 @@ const ChefsContainer = () => {
       .then((data) => setChefCountryCategories(data));
   }, []);
 
-  const generateTargetCountryData = (data) => {
-    const bangladeshiChefs = data.filter((obj) => obj.country_code === "BGD");
+  const generateTargetCountryData = (chefs) => {
+    const bangladeshiChefs = chefs.filter((obj) => obj.country_code === "BGD");
     setFilteredChefs(bangladeshiChefs);
     setActiveButtonId("BGD");
   };
@@ -88,7 +83,6 @@ const ChefsContainer = () => {
                 );
               })}
           </div>
-
           <div className="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6  mt-10">
             {filteredChefs &&
               filteredChefs.map((chef) => (
