@@ -12,12 +12,11 @@ import SingleRecipeInfoTable from "../../components/singleRecipeInfoTable/Single
 import { RecipesAndChefsContext } from "../../layouts/Layout";
 
 const User = () => {
-  const {recipes} = useContext(RecipesAndChefsContext)
+  const { recipes, setRecipes } = useContext(RecipesAndChefsContext);
   const { user, logOutUser, setUser } = useContext(AuthContext);
   const [role, setRole] = useState("");
   const [isModeratorFormShow, setIsModeratorFormShow] = useState(false);
   const [isAddRecipeFormShow, setIsAddRecipeFormShow] = useState(false);
-
 
   const navigate = useNavigate();
   const handleLogout = () => {
@@ -63,16 +62,23 @@ const User = () => {
     fetch("http://localhost:4000/recipe", {
       method: "DELETE",
       headers: { "content-type": "application/json" },
-      body: JSON.stringify(recipeAndChefId)
+      body: JSON.stringify(recipeAndChefId),
     })
       .then((res) => res.json())
-      .then((data) => console.log(data));
+      .then((data) => {
+        if (data.deletedCount > 0) {
+          const filteredRecipes = recipes.filter(
+            (recipe) => recipe.recipe_id !== recipeAndChefId.recipe_id
+          );
+          setRecipes(filteredRecipes);
+        }
+      });
 
-      fetch("http://localhost:4000/chef", {
-        method: "PATCH",
-        headers: {"content-type": "application/json"},
-        body: JSON.stringify(recipeAndChefId)
-      })
+    fetch("http://localhost:4000/chef", {
+      method: "PATCH",
+      headers: { "content-type": "application/json" },
+      body: JSON.stringify(recipeAndChefId),
+    });
   };
 
   return (
