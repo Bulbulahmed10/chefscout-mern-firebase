@@ -1,4 +1,6 @@
 import { useContext, useEffect, useState } from "react";
+import { Tooltip } from "react-tooltip";
+import Swal from "sweetalert2";
 import Banner from "../../components/shared/banner/Banner";
 import { AuthContext } from "../../context/AuthProvider";
 import no_avatar from "../.././assets/no_avatar.png";
@@ -7,7 +9,7 @@ import AddRecipe from "../../components/addRecipe/AddRecipe";
 import { getUserRole, updateUserRole } from "../../utils/user/fetchUserRole";
 import admin from "../../assets/admin.png";
 import moderator from "../../assets/moderator.png";
-import { Tooltip } from "react-tooltip";
+
 import SingleRecipeInfoTable from "../../components/singleRecipeInfoTable/SingleRecipeInfoTable";
 import { RecipesAndChefsContext } from "../../layouts/Layout";
 
@@ -18,6 +20,7 @@ const User = () => {
   const [isModeratorFormShow, setIsModeratorFormShow] = useState(false);
   const [isAddRecipeFormShow, setIsAddRecipeFormShow] = useState(false);
   const [recipeUpdateForm, setRecipeUpdateForm] = useState(false);
+  const [updateRecipeInfo, setUpdateRecipeInfo] = useState({});
   const navigate = useNavigate();
   const handleLogout = () => {
     logOutUser()
@@ -59,36 +62,50 @@ const User = () => {
   };
 
   const handleDeleteRecipe = (recipeAndChefId) => {
-    fetch("http://localhost:4000/recipe", {
-      method: "DELETE",
-      headers: { "content-type": "application/json" },
-      body: JSON.stringify(recipeAndChefId),
-    })
-      .then((res) => res.json())
-      .then((data) => {
-        if (data.deletedCount > 0) {
-          const filteredRecipes = recipes.filter(
-            (recipe) => recipe.recipe_id !== recipeAndChefId.recipe_id
-          );
-          setRecipes(filteredRecipes);
-        }
-      });
+    Swal.fire({
+      title: "Are you sure?",
+      text: "You won't be able to revert this!",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#3085d6",
+      cancelButtonColor: "#d33",
+      confirmButtonText: "Yes, delete it!",
+    }).then((result) => {
+      if (result.isConfirmed) {
+        fetch("http://localhost:4000/recipe", {
+          method: "DELETE",
+          headers: { "content-type": "application/json" },
+          body: JSON.stringify(recipeAndChefId),
+        })
+          .then((res) => res.json())
+          .then((data) => {
+            if (data.deletedCount > 0) {
+              const filteredRecipes = recipes.filter(
+                (recipe) => recipe.recipe_id !== recipeAndChefId.recipe_id
+              );
+              setRecipes(filteredRecipes);
+              Swal.fire("Deleted!", "Your file has been deleted.", "success");
+            }
+          });
 
-    fetch("http://localhost:4000/chef", {
-      method: "PATCH",
-      headers: { "content-type": "application/json" },
-      body: JSON.stringify(recipeAndChefId),
+        fetch("http://localhost:4000/chef", {
+          method: "PATCH",
+          headers: { "content-type": "application/json" },
+          body: JSON.stringify(recipeAndChefId),
+        });
+      }
     });
   };
 
-  const handleUpdateRecipe = (recipeId) => {
+  const handleUpdateRecipe = (singleRecipe) => {
     setIsAddRecipeFormShow(true);
     setRecipeUpdateForm(true);
+    setUpdateRecipeInfo(singleRecipe);
   };
 
-  const handleUpdateRecipeCancel = () => {
+  const handleRecipeCancel = () => {
     setRecipeUpdateForm(false);
-    setIsAddRecipeFormShow(false)
+    setIsAddRecipeFormShow(false);
   };
 
   return (
@@ -197,7 +214,8 @@ const User = () => {
           <AddRecipe
             recipeUpdateForm={recipeUpdateForm}
             setRecipeUpdateForm={setRecipeUpdateForm}
-            handleUpdateRecipeCancel={handleUpdateRecipeCancel}
+            handleRecipeCancel={handleRecipeCancel}
+            updateRecipeInfo={updateRecipeInfo}
           />
         )}
       </div>

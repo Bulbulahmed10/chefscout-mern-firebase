@@ -1,6 +1,6 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { toast } from "react-hot-toast";
-
+import { v4 as uuidv4 } from "uuid";
 const toastConfig = {
   style: {
     borderRadius: "10px",
@@ -13,18 +13,37 @@ const toastConfig = {
 
 const AddRecipe = ({
   recipeUpdateForm,
-  setRecipeUpdateForm,
-  handleUpdateRecipeCancel,
+  handleRecipeCancel,
+  updateRecipeInfo,
 }) => {
+  const [updateInfo2, setUpdateRecipeInfo2] = useState({});
+
+  const {
+    name,
+    instructions,
+    ingredients,
+    cooking_time,
+    calcium,
+    eat_time,
+    cooking_difficulty,
+    rating,
+    price,
+    recipe_image_url,
+  } = updateInfo2;
+
+  useEffect(() => {
+    setUpdateRecipeInfo2(updateRecipeInfo);
+  }, [updateRecipeInfo]);
+
   const handleAddRecipe = (e) => {
     e.preventDefault();
     const form = e.target;
-    const recipe_id = form.recipeId.value;
+    const recipe_id = uuidv4().toString().slice(0, 10);
     const chef_id = form.sellerId.value;
     const name = form.recipeName.value;
     const instructions = form.instructions.value;
     const ingredientsStr = form.ingredients.value;
-    const time = form.time.value;
+    const cooking_time = form.time.value;
     const calcium = form.calcium.value;
     const eat_time = form.eatingTime.value;
     const cooking_difficulty = form.cookingDifficulty.value;
@@ -38,7 +57,7 @@ const AddRecipe = ({
       name,
       instructions,
       ingredients,
-      time,
+      cooking_time,
       calcium,
       eat_time,
       cooking_difficulty,
@@ -48,7 +67,6 @@ const AddRecipe = ({
     };
 
     const updateChef = { chef_id, recipe_id };
-
     fetch("http://localhost:4000/recipe", {
       method: "POST",
       headers: { "content-type": "application/json" },
@@ -66,7 +84,6 @@ const AddRecipe = ({
       body: JSON.stringify(updateChef),
     });
   };
-
   return (
     <form
       onSubmit={handleAddRecipe}
@@ -77,23 +94,6 @@ const AddRecipe = ({
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 lg:gap-3">
         {!recipeUpdateForm && (
           <>
-            <div className="mb-4">
-              <label
-                htmlFor="recipeId"
-                className="block text-gray-700 font-medium mb-2">
-                Recipe ID
-              </label>
-              <div>
-                <input
-                  type="text"
-                  id="recipeId"
-                  name="recipeId"
-                  className="w-full border-gray-300 border-2 focus:outline-none focus:ring-2 focus:ring-blue-500 rounded-lg py-2 px-4"
-                  placeholder="Enter Recipe ID"
-                  required
-                />
-              </div>
-            </div>
             <div className="mb-4">
               <label
                 htmlFor="sellerId"
@@ -121,6 +121,7 @@ const AddRecipe = ({
           </label>
           <div className="relative">
             <input
+              defaultValue={name && name}
               type="text"
               id="recipeName"
               name="recipeName"
@@ -138,6 +139,7 @@ const AddRecipe = ({
           </label>
           <div className="relative">
             <input
+              defaultValue={instructions && instructions}
               type="text"
               id="instructions"
               name="instructions"
@@ -155,6 +157,10 @@ const AddRecipe = ({
           </label>
           <div className="relative">
             <input
+              defaultValue={
+                ingredients &&
+                ingredients.map((singleIngredient) => singleIngredient)
+              }
               type="text"
               id="ingredients"
               name="ingredients"
@@ -168,11 +174,12 @@ const AddRecipe = ({
           <label
             htmlFor="time"
             className="block text-gray-700 font-medium mb-2">
-            Time
+            Cooking Time
             <span className="text-sm font-Raleway ml-2 font-semibold tracking-wider"></span>
           </label>
           <div className="relative">
             <input
+              defaultValue={cooking_time && cooking_time}
               type="text"
               id="time"
               name="time"
@@ -189,6 +196,7 @@ const AddRecipe = ({
           </label>
           <div>
             <input
+              defaultValue={calcium && calcium}
               type="text"
               id="calcium"
               name="calcium"
@@ -206,6 +214,7 @@ const AddRecipe = ({
           </label>
           <div>
             <input
+              defaultValue={eat_time && eat_time}
               type="text"
               id="eatingTime"
               name="eatingTime"
@@ -223,6 +232,7 @@ const AddRecipe = ({
           </label>
           <div>
             <input
+              defaultValue={cooking_difficulty && cooking_difficulty}
               type="text"
               id="cookingDifficulty"
               name="cookingDifficulty"
@@ -240,6 +250,7 @@ const AddRecipe = ({
           </label>
           <div>
             <input
+              defaultValue={rating && rating}
               type="text"
               id="rating"
               name="rating"
@@ -257,6 +268,7 @@ const AddRecipe = ({
           </label>
           <div>
             <input
+              defaultValue={price && price}
               type="text"
               id="price"
               name="price"
@@ -274,6 +286,7 @@ const AddRecipe = ({
           </label>
           <div>
             <input
+              defaultValue={recipe_image_url && recipe_image_url}
               type="text"
               id="photoLink"
               name="photoLink"
@@ -286,7 +299,7 @@ const AddRecipe = ({
       </div>
       <div className="flex gap-4">
         <p
-          onClick={handleUpdateRecipeCancel}
+          onClick={handleRecipeCancel}
           className="w-fit h-10 bg-red-600 hover:bg-red-700 text-white font-medium py-2 px-4 rounded-lg transition duration-300 cursor-pointer">
           {recipeUpdateForm ? "Cancel Update" : "Cancel Add"}
         </p>

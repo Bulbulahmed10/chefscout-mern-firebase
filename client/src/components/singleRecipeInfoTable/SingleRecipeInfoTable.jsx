@@ -54,7 +54,7 @@ const SingleRecipeInfoTable = ({
         </td>
         <td>
           <button
-            onClick={() => handleUpdateRecipe(recipe_id)}
+            onClick={() => handleUpdateRecipe(recipe)}
             className="btn btn-ghost btn-xs bg-blue-500 text-white tracking-wide ">
             Update
           </button>
