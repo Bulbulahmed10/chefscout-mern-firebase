@@ -1,7 +1,8 @@
 import React, { useContext, useEffect, useState } from "react";
-import ChefCard from "../chefCard/chefCard";
+
 import Loading from "../Loading/Loading";
 import { RecipesAndChefsContext } from "../../layouts/Layout";
+import ChefCard from "../chefCard/ChefCard";
 
 const ChefsContainer = () => {
   const {chefs, setChefs} = useContext(RecipesAndChefsContext)
@@ -40,7 +41,7 @@ const ChefsContainer = () => {
   };
 
   const handleAllCategory = () => {
-    setFilteredChefs(chefs);
+    setFilteredChefs(chefs)
     setActiveButtonId(null);
   };
 

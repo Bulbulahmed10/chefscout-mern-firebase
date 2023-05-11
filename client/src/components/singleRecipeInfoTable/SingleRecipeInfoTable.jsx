@@ -13,7 +13,7 @@ const SingleRecipeInfoTable = ({
   const [chef, setChef] = useState({});
   useEffect(() => {
     const filteredData = chefs.find((item) =>
-      item.recipes_id.includes(recipe_id)
+      item.recipes_id?.includes(recipe_id)
     );
     setChef({
       chef_id: filteredData?.chef_id,

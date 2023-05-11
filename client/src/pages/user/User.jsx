@@ -5,7 +5,7 @@ import Banner from "../../components/shared/banner/Banner";
 import { AuthContext } from "../../context/AuthProvider";
 import no_avatar from "../.././assets/no_avatar.png";
 import { useNavigate } from "react-router-dom";
-import AddRecipe from "../../components/addRecipe/AddRecipe";
+import AddAndUpdateRecipeForm from "../../components/addAndUpdateRecipeForm/addAndUpdateRecipeForm";
 import { getUserRole, updateUserRole } from "../../utils/user/fetchUserRole";
 import admin from "../../assets/admin.png";
 import moderator from "../../assets/moderator.png";
@@ -211,45 +211,49 @@ const User = () => {
           )}
         </div>
         {isAddRecipeFormShow && (
-          <AddRecipe
+          <AddAndUpdateRecipeForm
             recipeUpdateForm={recipeUpdateForm}
             setRecipeUpdateForm={setRecipeUpdateForm}
             handleRecipeCancel={handleRecipeCancel}
             updateRecipeInfo={updateRecipeInfo}
+            setIsAddRecipeFormShow={setIsAddRecipeFormShow}
           />
         )}
       </div>
-      <div>
-        <h4 className=" text-end mr-28 text-lg py-3 font-mono">
-          Total Recipes: {recipes && recipes.length}
-        </h4>
-        <div className="overflow-x-auto w-[85%] h-[800px] mb-10 m-auto">
-          <table className="table w-full">
-            <thead>
-              <tr>
-                <th></th>
-                <th>Serial Number</th>
-                <th>Recipe Name</th>
-                <th>Chef Name</th>
-                <th>Chef ID</th>
-                <th>Recipe ID</th>
-                <th>Price</th>
-                <th>Action</th>
-              </tr>
-            </thead>
-            {recipes &&
-              recipes.map((recipe, index) => (
-                <SingleRecipeInfoTable
-                  key={recipe.recipe_id}
-                  recipe={recipe}
-                  index={index}
-                  handleDeleteRecipe={handleDeleteRecipe}
-                  handleUpdateRecipe={handleUpdateRecipe}
-                />
-              ))}
-          </table>
+
+      {(role === "moderator" || role === "admin") && (
+        <div>
+          <h4 className=" text-end mr-28 text-lg py-3 font-mono">
+            Total Recipes: {recipes && recipes.length}
+          </h4>
+          <div className="overflow-x-auto w-[85%] h-[800px] mb-10 m-auto">
+            <table className="table w-full">
+              <thead>
+                <tr>
+                  <th></th>
+                  <th>Serial Number</th>
+                  <th>Recipe Name</th>
+                  <th>Chef Name</th>
+                  <th>Chef ID</th>
+                  <th>Recipe ID</th>
+                  <th>Price</th>
+                  <th>Action</th>
+                </tr>
+              </thead>
+              {recipes &&
+                recipes.map((recipe, index) => (
+                  <SingleRecipeInfoTable
+                    key={recipe.recipe_id}
+                    recipe={recipe}
+                    index={index}
+                    handleDeleteRecipe={handleDeleteRecipe}
+                    handleUpdateRecipe={handleUpdateRecipe}
+                  />
+                ))}
+            </table>
+          </div>
         </div>
-      </div>
+      )}
     </div>
   );
 };

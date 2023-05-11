@@ -23,10 +23,7 @@ app.get("/countryFoodName", (req, res) => {
 
 app.use("/api", routes);
 
-// connect mongoDB
 connectDb();
-
-// Create a MongoClient with a MongoClientOptions object to set the Stable API version
 const client = new MongoClient(uri, {
   serverApi: {
     version: ServerApiVersion.v1,
@@ -35,6 +32,7 @@ const client = new MongoClient(uri, {
   },
 });
 
+
 async function run() {
   try {
     await client.connect();
@@ -42,6 +40,7 @@ async function run() {
     const recipesCollection = client.db("ChefscoutDB").collection("recipes");
     const chefsCollection = client.db("ChefscoutDB").collection("chefs");
 
+    // recipes CRUD functionality and routes
     app.get("/recipes", async (req, res) => {
       const cursor = recipesCollection.find();
       const result = await cursor.toArray();
@@ -54,6 +53,50 @@ async function run() {
       res.send(result);
     });
 
+    app.put("/recipe", async (req, res) => {
+      const updatedInfo = req.body;
+      const {
+        recipe_id,
+        name,
+        instructions,
+        ingredients,
+        cooking_time,
+        calcium,
+        eat_time,
+        cooking_difficulty,
+        rating,
+        price,
+        recipe_image_url,
+      } = updatedInfo;
+      
+      const filter = { recipe_id: recipe_id };
+      const options = { upsert: true };
+      const updatedRecipe = {
+        $set: {
+          recipe_id,
+          name,
+          instructions,
+          ingredients,
+          cooking_time,
+          calcium,
+          eat_time,
+          cooking_difficulty,
+          rating,
+          price,
+          recipe_image_url,
+        },
+      };
+
+      const result = await recipesCollection.updateOne(
+        filter,
+        updatedRecipe,
+        options
+      );
+
+      res.send(result);
+    });
+
+
     app.delete("/recipe", async (req, res) => {
       const recipeAndChefId = req.body;
       const query = { recipe_id: recipeAndChefId.recipe_id };
@@ -61,6 +104,7 @@ async function run() {
       res.send(result);
     });
 
+    //chef CRUD functionality and routes
     app.get("/chefs", async (req, res) => {
       const cursor = chefsCollection.find();
       const result = await cursor.toArray();

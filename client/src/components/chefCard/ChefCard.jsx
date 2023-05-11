@@ -15,7 +15,7 @@ const ChefCard = ({ chef }) => {
     recipes_id,
     country_code,
   } = chef;
-
+  console.log(chef);
   const countryNameFindByCountryCode = (country_code) => {
     if (country_code === "BGD") {
       return "Bangladesh";
@@ -41,7 +41,6 @@ const ChefCard = ({ chef }) => {
       <div>
         <LazyLoadImage
           src={chef_photo}
-     
           className="w-32 h-32 mx-auto rounded-full object-cover"
           alt="Chef Profile"
         />
@@ -65,7 +64,7 @@ const ChefCard = ({ chef }) => {
               Total Recipes:{" "}
             </span>
             <span className="text-lg font-Raleway font-bold ml-2 mt-1">
-              {recipes_id.length}
+              {recipes_id?.length && recipes_id?.length}
             </span>
           </div>
           <div className="flex items-center gap-2">

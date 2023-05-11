@@ -1,6 +1,7 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { toast } from "react-hot-toast";
 import { v4 as uuidv4 } from "uuid";
+import { RecipesAndChefsContext } from "../../layouts/Layout";
 const toastConfig = {
   style: {
     borderRadius: "10px",
@@ -11,14 +12,19 @@ const toastConfig = {
   duration: 5000,
 };
 
-const AddRecipe = ({
+const AddAndUpdateRecipeForm = ({
   recipeUpdateForm,
   handleRecipeCancel,
   updateRecipeInfo,
+  setIsAddRecipeFormShow,
+  setRecipeUpdateForm,
 }) => {
-  const [updateInfo2, setUpdateRecipeInfo2] = useState({});
-
+  const [updateRecipeInfoState, setUpdateRecipeInfoState] = useState({});
+  const {  recipes,  setRecipes} = useContext(RecipesAndChefsContext);
+  
+  const [reloadData, setReloadData] = useState(false)
   const {
+    recipe_id,
     name,
     instructions,
     ingredients,
@@ -29,17 +35,35 @@ const AddRecipe = ({
     rating,
     price,
     recipe_image_url,
-  } = updateInfo2;
+  } = updateRecipeInfoState;
 
   useEffect(() => {
-    setUpdateRecipeInfo2(updateRecipeInfo);
+    setUpdateRecipeInfoState(updateRecipeInfo);
   }, [updateRecipeInfo]);
 
-  const handleAddRecipe = (e) => {
+  useEffect(() => {
+    if(!reloadData) {
+      return 
+    }
+    const fetchRecipes = () => {
+      fetch("http://localhost:4000/recipes")
+        .then((res) => res.json())
+        .then((data) => {
+          console.log(data);
+          setRecipes(data); // Update the state with the new data
+        });
+    };
+    fetchRecipes();
+    setReloadData(false)
+  }, [reloadData, recipes]);
+
+  const handleAddAndUpdateRecipe = (e) => {
     e.preventDefault();
     const form = e.target;
-    const recipe_id = uuidv4().toString().slice(0, 10);
-    const chef_id = form.sellerId.value;
+    const recipe_id = !recipeUpdateForm
+      ? uuidv4().toString().slice(0, 10)
+      : form.recipe_id.value;
+    const chef_id = form?.sellerId?.value;
     const name = form.recipeName.value;
     const instructions = form.instructions.value;
     const ingredientsStr = form.ingredients.value;
@@ -65,53 +89,120 @@ const AddRecipe = ({
       price,
       recipe_image_url,
     };
+    const updateChefInfoData = { chef_id, recipe_id };
 
-    const updateChef = { chef_id, recipe_id };
-    fetch("http://localhost:4000/recipe", {
-      method: "POST",
-      headers: { "content-type": "application/json" },
-      body: JSON.stringify(recipeInfo),
-    })
-      .then((res) => res.json())
-      .then((data) => {
-        toast.success("Recipe added successful!", toastConfig);
-        form.reset();
-      });
 
-    fetch("http://localhost:4000/chef", {
-      method: "PUT",
-      headers: { "content-type": "application/json" },
-      body: JSON.stringify(updateChef),
-    });
+    if (!recipeUpdateForm) {
+      fetch("http://localhost:4000/recipe", {
+        method: "POST",
+        headers: { "content-type": "application/json" },
+        body: JSON.stringify(recipeInfo),
+      })
+        .then((res) => res.json())
+        .then((data) => {
+          if (data.acknowledged === true) {
+            console.log(data);
+            toast.success("Recipe added successful!", toastConfig);
+            setIsAddRecipeFormShow(false);
+            form.reset();
+            setReloadData(true)
+            // const updatedData = {
+            //   ...recipeInfo,
+            //   _id: data.insertedId
+            // }
+   
+          }
+        });
+
+      fetch("http://localhost:4000/chef", {
+        method: "PUT",
+        headers: { "content-type": "application/json" },
+        body: JSON.stringify(updateChefInfoData),
+      })
+      .then(res => {
+        setReloadData(true)
+      })
+
+    } else {
+      fetch("http://localhost:4000/recipe", {
+        method: "PUT",
+        headers: { "content-type": "application/json" },
+        body: JSON.stringify({
+          recipe_id,
+          name,
+          instructions,
+          ingredients,
+          cooking_time,
+          calcium,
+          eat_time,
+          cooking_difficulty,
+          rating,
+          price,
+          recipe_image_url,
+        }),
+      })
+        .then((res) => res.json())
+        .then((data) => {
+          if (data.acknowledged === true) {
+            toast.success("Recipe update successful!", toastConfig);
+            setIsAddRecipeFormShow(false);
+            setRecipeUpdateForm(false);
+            setReloadData(true)
+            form.reset();
+          }
+        });
+    }
   };
+
+
+
   return (
     <form
-      onSubmit={handleAddRecipe}
+      onSubmit={handleAddAndUpdateRecipe}
       className="bg-white shadow-md px-8 py-6 my-6">
       <h2 className="text-2xl font-bold mb-6 text-center font-Raleway">
         {recipeUpdateForm ? "Update Recipe" : "Add Recipe"}
       </h2>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 lg:gap-3">
         {!recipeUpdateForm && (
-          <>
-            <div className="mb-4">
-              <label
-                htmlFor="sellerId"
-                className="block text-gray-700 font-medium mb-2">
-                Seller ID
-              </label>
-              <div>
-                <input
-                  type="text"
-                  id="sellerId"
-                  name="sellerId"
-                  className="w-full border-gray-300 border-2 focus:outline-none focus:ring-2 focus:ring-blue-500 rounded-lg py-2 px-4"
-                  placeholder="Enter Seller Id"
-                  required
-                />
-              </div>
+          <div className="mb-4">
+            <label
+              htmlFor="sellerId"
+              className="block text-gray-700 font-medium mb-2">
+              Chef ID
+            </label>
+            <div>
+              <input
+                type="text"
+                id="sellerId"
+                name="sellerId"
+                className="w-full border-gray-300 border-2 focus:outline-none focus:ring-2 focus:ring-blue-500 rounded-lg py-2 px-4"
+                placeholder="Enter Chef Id"
+                required
+              />
             </div>
-          </>
+          </div>
+        )}
+        {recipeUpdateForm && (
+          <div className="mb-4">
+            <label
+              htmlFor="recipe_id"
+              className="block text-gray-700 font-medium mb-2">
+              Recipe ID
+            </label>
+            <div>
+              <input
+                defaultValue={recipe_id && recipe_id}
+                type="text"
+                id="recipe_id"
+                name="recipe_id"
+                className="w-full border-gray-300 border-2 focus:outline-none focus:ring-2 focus:ring-blue-500 rounded-lg py-2 px-4"
+                placeholder="Enter Recipe Id"
+                required
+                readOnly
+              />
+            </div>
+          </div>
         )}
         <div className="mb-4">
           <label
@@ -306,11 +397,11 @@ const AddRecipe = ({
         <button
           type="submit"
           className="w-fit h-10 bg-blue-500 hover:bg-blue-600 text-white font-medium py-2 px-4 rounded-lg transition duration-300 ">
-          {recipeUpdateForm ? "Update recipe" : "Add Recipe"}
+          {recipeUpdateForm ? "Update Recipe" : "Add Recipe"}
         </button>
       </div>
     </form>
   );
 };
 
-export default AddRecipe;
+export default AddAndUpdateRecipeForm;
