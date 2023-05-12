@@ -108,8 +108,7 @@ const SingleRecipeInfo = ({ id, recipe, chefInfo }) => {
                       <li
                         className="font-medium font-Raleway text-lg mb-2"
                         key={index}>
-                        {" "}
-                        {singleIngredient}{" "}
+                        {singleIngredient}
                       </li>
                     );
                   })}

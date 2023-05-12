@@ -1,3 +1,4 @@
+
 const setUserRole = async (user) => {
     try {
 
@@ -10,11 +11,9 @@ const setUserRole = async (user) => {
         })
 
         const res = await req.json();
-        console.log(res);
-
         return res;
     } catch (error) {
-        console.log(error);
+        return error
     }
 
 };

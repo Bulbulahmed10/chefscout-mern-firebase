@@ -1,9 +1,13 @@
 const User = require("../Model/userModel/userModel");
 
 const getAllUsers = async (req, res) => {
-
+    console.log(req.query);
     try {
-        const user = await User.find();
+        let query = {}
+        if(req.query?.role){
+            query = {role: req.query.role }
+        }
+        const user = await User.find(query);
         res.send(user);
     } catch (error) {
         console.log(error);

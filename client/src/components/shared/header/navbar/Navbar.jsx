@@ -25,9 +25,11 @@ const Navbar = () => {
           <span className="cursor-pointer">
             <TbSearch className="text-xl" />
           </span>
-          <label htmlFor="my-drawer" className="cursor-pointer">
-            <BsCart3 className="text-2xl" />
-          </label>
+          <Link to="/cart">
+            <label htmlFor="my-drawer" className="cursor-pointer">
+              <BsCart3 className="text-2xl" />
+            </label>
+          </Link>
           {user && (
             <>
               <Link to="/me" className="my-anchor-element">

@@ -10,6 +10,7 @@ import User from "../pages/user/User";
 import Registration from "../pages/registration/Registration";
 import ErrorPage from "../pages/error/ErrorPage";
 import ProtectedRoutes from "./ProtectedRoutes";
+import Cart from "../pages/cart/Cart";
 const Chef = lazy(() => import("../pages/chef/Chef"));
 const router = createBrowserRouter([
   {
@@ -60,6 +61,7 @@ const router = createBrowserRouter([
           </ProtectedRoutes>
         ),
       },
+      {path: '/cart', element: <Cart />}
     ],
   },
 ]);
