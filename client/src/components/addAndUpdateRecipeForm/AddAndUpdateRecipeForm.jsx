@@ -106,10 +106,6 @@ const AddAndUpdateRecipeForm = ({
             setIsAddRecipeFormShow(false);
             form.reset();
             setReloadData(true)
-            // const updatedData = {
-            //   ...recipeInfo,
-            //   _id: data.insertedId
-            // }
    
           }
         });
