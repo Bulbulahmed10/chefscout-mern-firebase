@@ -1,16 +1,8 @@
-import React, { useContext, useEffect, useState } from "react";
+import React, {  useEffect, useState } from "react";
 import { toast } from "react-hot-toast";
 import { v4 as uuidv4 } from "uuid";
-import { RecipesAndChefsContext } from "../../layouts/Layout";
-const toastConfig = {
-  style: {
-    borderRadius: "10px",
-    background: "#333",
-    color: "#fff",
-    textAlign: "center",
-  },
-  duration: 5000,
-};
+import toastConfig from "../../utils/toastConfig";
+
 
 const AddAndUpdateRecipeForm = ({
   recipeUpdateForm,
@@ -20,9 +12,6 @@ const AddAndUpdateRecipeForm = ({
   setRecipeUpdateForm,
 }) => {
   const [updateRecipeInfoState, setUpdateRecipeInfoState] = useState({});
-  const {  recipes,  setRecipes} = useContext(RecipesAndChefsContext);
-  
-  const [reloadData, setReloadData] = useState(false)
   const {
     recipe_id,
     name,
@@ -40,22 +29,6 @@ const AddAndUpdateRecipeForm = ({
   useEffect(() => {
     setUpdateRecipeInfoState(updateRecipeInfo);
   }, [updateRecipeInfo]);
-
-  useEffect(() => {
-    if(!reloadData) {
-      return 
-    }
-    const fetchRecipes = () => {
-      fetch("http://localhost:4000/recipes")
-        .then((res) => res.json())
-        .then((data) => {
-          console.log(data);
-          setRecipes(data); // Update the state with the new data
-        });
-    };
-    fetchRecipes();
-    setReloadData(false)
-  }, [reloadData, recipes]);
 
   const handleAddAndUpdateRecipe = (e) => {
     e.preventDefault();
@@ -91,7 +64,6 @@ const AddAndUpdateRecipeForm = ({
     };
     const updateChefInfoData = { chef_id, recipe_id };
 
-
     if (!recipeUpdateForm) {
       fetch("http://localhost:4000/recipe", {
         method: "POST",
@@ -101,12 +73,9 @@ const AddAndUpdateRecipeForm = ({
         .then((res) => res.json())
         .then((data) => {
           if (data.acknowledged === true) {
-            console.log(data);
             toast.success("Recipe added successful!", toastConfig);
             setIsAddRecipeFormShow(false);
             form.reset();
-            setReloadData(true)
-   
           }
         });
 
@@ -114,11 +83,7 @@ const AddAndUpdateRecipeForm = ({
         method: "PUT",
         headers: { "content-type": "application/json" },
         body: JSON.stringify(updateChefInfoData),
-      })
-      .then(res => {
-        setReloadData(true)
-      })
-
+      }).then(() => {});
     } else {
       fetch("http://localhost:4000/recipe", {
         method: "PUT",
@@ -143,14 +108,11 @@ const AddAndUpdateRecipeForm = ({
             toast.success("Recipe update successful!", toastConfig);
             setIsAddRecipeFormShow(false);
             setRecipeUpdateForm(false);
-            setReloadData(true)
             form.reset();
           }
         });
     }
   };
-
-
 
   return (
     <form

@@ -15,7 +15,6 @@ const ChefCard = ({ chef }) => {
     recipes_id,
     country_code,
   } = chef;
-  console.log(chef);
   const countryNameFindByCountryCode = (country_code) => {
     if (country_code === "BGD") {
       return "Bangladesh";

@@ -37,6 +37,8 @@ const User = () => {
       });
   };
 
+  // moderators functionality
+
   useEffect(() => {
     const fetchUser = async () => {
       const res = await getUserRole(user);
@@ -47,11 +49,17 @@ const User = () => {
     fetchUser();
   }, []);
 
+  const fetchFilteredModerators = async () => {
+    try {
+      const res = await fetch("http://localhost:4000/api/user?role=moderator");
+      const data = await res.json();
+      setAllModerators(data);
+    } catch (err) {
+      console.log(err);
+    }
+  };
   useEffect(() => {
-    fetch("http://localhost:4000/api/user?role=moderator")
-      .then((res) => res.json())
-      .then((data) => setAllModerators(data))
-      .catch((err) => console.log(err));
+    fetchFilteredModerators();
   }, []);
 
   const handleAddModerator = async (e) => {
@@ -62,6 +70,7 @@ const User = () => {
     const userRole = await updateUserRole(userId, role);
     if (userRole.role === "moderator") {
       toast.success("Moderator added successfully", toastConfig);
+      fetchFilteredModerators();
       form.reset();
     }
   };
@@ -69,9 +78,11 @@ const User = () => {
     const userRole = await updateUserRole(userId, "user");
     if (userRole.role === "user") {
       toast.success("Moderator remove successfully", toastConfig);
+      fetchFilteredModerators();
     }
   };
 
+  // handle action button
   const handleActionButton = (handleActionName) => {
     if (handleActionName === "addModerator") {
       setActionButtonName("addModerator");
@@ -275,6 +286,7 @@ const User = () => {
                     <tr>
                       <th></th>
                       <th>ID</th>
+                      <th>Email</th>
                       <th>Action</th>
                     </tr>
                   </thead>
@@ -285,13 +297,16 @@ const User = () => {
                           <tr key={index}>
                             <th>{index + 1}</th>
                             <td className="font-mono">{singleModerator.uid}</td>
-                            <button
-                              onClick={() =>
-                                handleRemoveModerator(singleModerator.uid)
-                              }
-                              className="btn-accent px-4 py-2 mt-2 rounded-md">
-                              Remove
-                            </button>
+                            <td className="font-mono">{singleModerator.email}</td>
+                            <td>
+                              <button
+                                onClick={() =>
+                                  handleRemoveModerator(singleModerator.uid)
+                                }
+                                className="btn-accent px-4 py-2 mt-2 rounded-md">
+                                Remove
+                              </button>
+                            </td>
                           </tr>
                         );
                       })}

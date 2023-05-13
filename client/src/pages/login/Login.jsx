@@ -7,16 +7,7 @@ import { AuthContext } from "../../context/AuthProvider";
 import { toast } from "react-hot-toast";
 import firebaseErrorEdit from "../../utils/firebaseAuthEdit";
 import { getUserRole } from "../../utils/user/fetchUserRole";
-
-const toastConfig = {
-  style: {
-    borderRadius: "10px",
-    background: "#333",
-    color: "#fff",
-    textAlign: "center",
-  },
-  duration: 5000,
-};
+import toastConfig from "../../utils/toastConfig";
 
 const Login = () => {
   const { setUser, googleSignIn, githubSignIn, signInUser, setLoading } =
@@ -29,7 +20,6 @@ const Login = () => {
     googleSignIn()
       .then((result) => {
         const signInUser = result;
-        console.log(signInUser);
         setUser(signInUser);
         navigate(from, { replace: true });
         setLoading(false);

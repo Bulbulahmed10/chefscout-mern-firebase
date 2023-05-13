@@ -1,7 +1,6 @@
 const User = require("../Model/userModel/userModel");
 
 const getAllUsers = async (req, res) => {
-    console.log(req.query);
     try {
         let query = {}
         if(req.query?.role){

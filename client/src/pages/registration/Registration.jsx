@@ -5,15 +5,8 @@ import { FiEye, FiEyeOff } from "react-icons/fi";
 import { AuthContext } from "../../context/AuthProvider";
 import { toast } from "react-hot-toast";
 import firebaseErrorEdit from "../../utils/firebaseAuthEdit";
-const toastConfig = {
-  style: {
-    borderRadius: "10px",
-    background: "#333",
-    color: "#fff",
-    textAlign: "center",
-  },
-  duration: 5000,
-};
+import toastConfig from "../../utils/toastConfig";
+
 const Registration = () => {
   const { createUser, updateUser, setUser } = useContext(AuthContext);
   const [showPassword, setShowPassword] = useState(false);

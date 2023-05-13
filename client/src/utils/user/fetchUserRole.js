@@ -39,7 +39,7 @@ const updateUserRole = async (uid,role) => {
         })
 
         const res = await req.json();
-        console.log(res);
+    
         return res;
 
     }
