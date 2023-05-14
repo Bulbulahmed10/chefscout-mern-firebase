@@ -35,10 +35,11 @@ const client = new MongoClient(uri, {
 async function run() {
   try {
     await client.connect();
-
+    // database collections
     const recipesCollection = client.db("ChefscoutDB").collection("recipes");
     const chefsCollection = client.db("ChefscoutDB").collection("chefs");
     const cartsCollection = client.db("ChefscoutDB").collection("carts");
+    const ordersCollection = client.db("ChefscoutDB").collection("orders");
     // recipes CRUD functionality and routes
     app.get("/recipes", async (req, res) => {
       const cursor = recipesCollection.find();
@@ -147,9 +148,29 @@ async function run() {
       res.send(carts);
     });
 
+    app.delete("/carts", async (req, res) => {
+      if (req.query?.email) {
+        const requestQuery = req.query.email;
+        const query = {email: requestQuery }
+        const result = await cartsCollection.deleteMany(query);
+        res.send(result);
+      } else {
+        res.status(401).json({ message: "Something went wrong" });
+      }
+    });
+
+
+
+
     app.post("/cart", async (req, res) => {
       const cartInfo = req.body;
       const result = await cartsCollection.insertOne(cartInfo);
+      res.send(result);
+    });
+
+    app.post("/order", async (req, res) => {
+      const orderInfo = req.body;
+      const result = await ordersCollection.insertOne(orderInfo);
       res.send(result);
     });
 
