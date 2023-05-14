@@ -151,7 +151,7 @@ async function run() {
     app.delete("/carts", async (req, res) => {
       if (req.query?.email) {
         const requestQuery = req.query.email;
-        const query = {email: requestQuery }
+        const query = { email: requestQuery };
         const result = await cartsCollection.deleteMany(query);
         res.send(result);
       } else {
@@ -159,12 +159,21 @@ async function run() {
       }
     });
 
-
-
-
     app.post("/cart", async (req, res) => {
       const cartInfo = req.body;
       const result = await cartsCollection.insertOne(cartInfo);
+      res.send(result);
+    });
+
+
+
+    // orders routes
+    app.get("/order", async (req, res) => {
+      let query = {};
+      if (req.query?.email) {
+        query = { email: req.query.email };
+      }
+      const result = await ordersCollection.find(query).toArray();
       res.send(result);
     });
 
