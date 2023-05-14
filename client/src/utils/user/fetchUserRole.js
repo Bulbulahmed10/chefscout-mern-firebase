@@ -2,7 +2,7 @@
 const setUserRole = async (user) => {
     try {
 
-        const req = await fetch('http://localhost:4000/api/user', {
+        const req = await fetch('https://chefscout.vercel.app/api/user', {
             method: "POST",
             headers: {
                 "content-type": "application/json"
@@ -20,7 +20,7 @@ const setUserRole = async (user) => {
 
 const getUserRole = async (user) => {
     try {
-        const req = await fetch(`http://localhost:4000/api/user/${user.uid}`)
+        const req = await fetch(`https://chefscout.vercel.app/api/user/${user.uid}`)
         const res = await req.json();
         return res;
     } catch (error) {
@@ -30,7 +30,7 @@ const getUserRole = async (user) => {
 
 const updateUserRole = async (uid,role) => {
     try {
-        const req = await fetch(`http://localhost:4000/api/user/${uid}`,{
+        const req = await fetch(`https://chefscout.vercel.app/api/user/${uid}`,{
             method: "PUT",
             headers: {
                 "content-type": "application/json"

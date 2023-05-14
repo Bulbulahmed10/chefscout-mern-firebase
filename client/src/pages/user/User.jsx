@@ -51,7 +51,7 @@ const User = () => {
 
   const fetchFilteredModerators = async () => {
     try {
-      const res = await fetch("http://localhost:4000/api/user?role=moderator");
+      const res = await fetch("https://chefscout.vercel.app/api/user?role=moderator");
       const data = await res.json();
       setAllModerators(data);
     } catch (err) {
@@ -113,7 +113,7 @@ const User = () => {
       confirmButtonText: "Yes, delete it!",
     }).then((result) => {
       if (result.isConfirmed) {
-        fetch("http://localhost:4000/recipe", {
+        fetch("https://chefscout.vercel.app/recipe", {
           method: "DELETE",
           headers: { "content-type": "application/json" },
           body: JSON.stringify(recipeAndChefId),
@@ -129,7 +129,7 @@ const User = () => {
             }
           });
 
-        fetch("http://localhost:4000/chef", {
+        fetch("https://chefscout.vercel.app/chef", {
           method: "PATCH",
           headers: { "content-type": "application/json" },
           body: JSON.stringify(recipeAndChefId),

@@ -20,7 +20,7 @@ const ChefsContainer = () => {
   
   useEffect(() => {
     fetch(
-      "https://chefscout-server-assignment-10-bulbulahmed10.vercel.app/countryFoodName"
+      "https://chefscout.vercel.app/countryFoodName"
     )
       .then((res) => res.json())
       .then((data) => setChefCountryCategories(data));

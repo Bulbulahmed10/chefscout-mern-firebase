@@ -32,14 +32,13 @@ const client = new MongoClient(uri, {
   },
 });
 
-
 async function run() {
   try {
     await client.connect();
 
     const recipesCollection = client.db("ChefscoutDB").collection("recipes");
     const chefsCollection = client.db("ChefscoutDB").collection("chefs");
-
+    const cartsCollection = client.db("ChefscoutDB").collection("carts");
     // recipes CRUD functionality and routes
     app.get("/recipes", async (req, res) => {
       const cursor = recipesCollection.find();
@@ -68,7 +67,7 @@ async function run() {
         price,
         recipe_image_url,
       } = updatedInfo;
-      
+
       const filter = { recipe_id: recipe_id };
       const options = { upsert: true };
       const updatedRecipe = {
@@ -95,7 +94,6 @@ async function run() {
 
       res.send(result);
     });
-
 
     app.delete("/recipe", async (req, res) => {
       const recipeAndChefId = req.body;
@@ -135,6 +133,23 @@ async function run() {
         $pull: { recipes_id: recipeAndChefId.recipe_id },
       };
       const result = await chefsCollection.updateOne(query, updateChef, option);
+      res.send(result);
+    });
+
+    // cart routes
+
+    app.get("/carts", async (req, res) => {
+      let query = {};
+      if (req?.query?.email) {
+        query = { email: req.query.email };
+      }
+      const carts = await cartsCollection.find(query).toArray();
+      res.send(carts);
+    });
+
+    app.post("/cart", async (req, res) => {
+      const cartInfo = req.body;
+      const result = await cartsCollection.insertOne(cartInfo);
       res.send(result);
     });
 

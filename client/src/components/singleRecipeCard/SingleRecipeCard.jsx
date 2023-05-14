@@ -2,18 +2,48 @@ import React, { useContext, useState } from "react";
 import Ratings from "react-rating";
 import { AiFillStar } from "react-icons/ai";
 import { FiEye } from "react-icons/fi";
+import { toast } from "react-hot-toast";
 import SingleRecipeInfo from "../singleRecipeInfo/SingleRecipeInfo";
 import { RecipesAndChefsContext } from "../../layouts/Layout";
+import { AuthContext } from "../../context/AuthProvider";
+import toastConfig from "../../utils/toastConfig";
 const SingleRecipeCard = ({ recipe }) => {
+  const { user } = useContext(AuthContext);
+
   const { name, price, recipe_id, recipe_image_url, rating } = recipe;
   const { chefs } = useContext(RecipesAndChefsContext);
   const [chefInfo, setChefInfo] = useState({});
   const findChefByRecipe = (recipeId) => {
     const findChef =
       chefs && chefs.find((chef) => chef.recipes_id.includes(recipeId));
-    const {chef_id, chef_name } = findChef && findChef
-    setChefInfo({chef_id, chef_name})
+    const { chef_id, chef_name } = findChef && findChef;
+    setChefInfo({ chef_id, chef_name });
   };
+
+  const handleAddToCart = () => {
+    const cartInfo = {
+      email: user.email,
+      recipeName: name,
+      image: recipe_image_url,
+      price: price,
+      recipeId: recipe_id,
+      quantity: 1,
+    };
+    fetch("http://localhost:4000/cart", {
+      method: "POST",
+      headers: { "content-type": "application/json" },
+      body: JSON.stringify(cartInfo),
+    })
+      .then((res) => res.json())
+      .then((result) => {
+        if (result.acknowledged) {
+          toast.success("Cart added successfully", toastConfig);
+        } else {
+          toast.error("Something went wrong, try again", toastConfig);
+        }
+      });
+  };
+
 
   return (
     <div className="flex flex-col mb-10 bg-white p-4 rounded-sm">
@@ -45,7 +75,9 @@ const SingleRecipeCard = ({ recipe }) => {
           </p>
         </div>
         <div className="flex gap-3">
-          <button className="px-4 py-2 border border-yellow-500 font-Raleway tracking-wider font-bold text-slate-600 hover:bg-yellow-100 rounded-md ">
+          <button
+            onClick={handleAddToCart}
+            className="px-4 py-2 border border-yellow-500 font-Raleway tracking-wider font-bold text-slate-600 hover:bg-yellow-100 rounded-md ">
             Add Cart
           </button>
           <label

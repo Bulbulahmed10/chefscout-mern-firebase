@@ -9,13 +9,13 @@ const Layout = () => {
   const [recipes, setRecipes] = useState([]);
   const [chefs, setChefs] = useState([]);
   useEffect(() => {
-    fetch("http://localhost:4000/recipes")
+    fetch("https://chefscout.vercel.app/recipes")
       .then((res) => res.json())
       .then((data) => setRecipes(data));
   }, []);
 
   useEffect(() => {
-    fetch("http://localhost:4000/chefs")
+    fetch("https://chefscout.vercel.app/chefs")
       .then((res) => res.json())
       .then((data) => setChefs(data));
   }, []);

@@ -65,7 +65,7 @@ const AddAndUpdateRecipeForm = ({
     const updateChefInfoData = { chef_id, recipe_id };
 
     if (!recipeUpdateForm) {
-      fetch("http://localhost:4000/recipe", {
+      fetch("https://chefscout.vercel.app/recipe", {
         method: "POST",
         headers: { "content-type": "application/json" },
         body: JSON.stringify(recipeInfo),
@@ -79,13 +79,13 @@ const AddAndUpdateRecipeForm = ({
           }
         });
 
-      fetch("http://localhost:4000/chef", {
+      fetch("https://chefscout.vercel.app/chef", {
         method: "PUT",
         headers: { "content-type": "application/json" },
         body: JSON.stringify(updateChefInfoData),
       }).then(() => {});
     } else {
-      fetch("http://localhost:4000/recipe", {
+      fetch("https://chefscout.vercel.app/recipe", {
         method: "PUT",
         headers: { "content-type": "application/json" },
         body: JSON.stringify({
