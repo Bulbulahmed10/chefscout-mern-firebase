@@ -13,6 +13,7 @@ import SingleRecipeInfoTable from "../../components/singleRecipeInfoTable/Single
 import { RecipesAndChefsContext } from "../../layouts/Layout";
 import { toast } from "react-hot-toast";
 import toastConfig from "../../utils/toastConfig";
+import ManageOrderCart from "../../components/manageOrderCart/ManageOrderCart";
 
 const User = () => {
   const { recipes, setRecipes } = useContext(RecipesAndChefsContext);
@@ -51,7 +52,9 @@ const User = () => {
 
   const fetchFilteredModerators = async () => {
     try {
-      const res = await fetch("https://chefscout.vercel.app/api/user?role=moderator");
+      const res = await fetch(
+        "https://chefscout.vercel.app/api/user?role=moderator"
+      );
       const data = await res.json();
       setAllModerators(data);
     } catch (err) {
@@ -95,6 +98,10 @@ const User = () => {
     } else if (handleActionName === "manageRecipes") {
       setIsToggleActionButton(!isToggleActionButton);
       setActionButtonName("manageRecipes");
+    } else if (handleActionName === "manageOrders") {
+      setActionButtonName("manageOrders");
+      setIsToggleActionButton(!isToggleActionButton);
+      setIsAddRecipeFormShow(false);
     }
   };
 
@@ -243,6 +250,15 @@ const User = () => {
                     }`}>
                     Manage Recipes
                   </a>
+                  <a
+                    onClick={() => handleActionButton("manageOrders")}
+                    className={`tab tab-bordered text-lg font-Raleway font-bold  tracking-wider text-blue-500 ${
+                      actionButtonName === "manageOrders" &&
+                      isToggleActionButton &&
+                      "tab-active"
+                    }`}>
+                    Manage Orders
+                  </a>
                 </>
               )}
             </div>
@@ -277,7 +293,6 @@ const User = () => {
               </button>
             </form>
           )}
-
           {actionButtonName === "manageModerators" && isToggleActionButton && (
             <div className="my-4">
               <div className="overflow-x-auto">
@@ -297,7 +312,9 @@ const User = () => {
                           <tr key={index}>
                             <th>{index + 1}</th>
                             <td className="font-mono">{singleModerator.uid}</td>
-                            <td className="font-mono">{singleModerator.email}</td>
+                            <td className="font-mono">
+                              {singleModerator.email}
+                            </td>
                             <td>
                               <button
                                 onClick={() =>
@@ -362,6 +379,9 @@ const User = () => {
             </div>
           )}
         </div>
+      )}
+      {actionButtonName === "manageOrders" && isToggleActionButton && (
+        <ManageOrderCart />
       )}
     </div>
   );

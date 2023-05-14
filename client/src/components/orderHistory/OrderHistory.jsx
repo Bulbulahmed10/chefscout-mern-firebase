@@ -11,12 +11,16 @@ const OrderHistory = () => {
       .then((data) => setOrders(data));
   }, []);
 
-
   return (
     <div className="m-8">
       <h3 className="text-2xl font-Raleway tracking-wider font-bold text-slate-700">
         Order History
       </h3>
+      {orders.length < 1 && (
+        <p className="text-sm font-mono text-slate-500">
+          No order history available
+        </p>
+      )}
       <div className="mt-4">
         <div>
           {orders.length > 0 &&
@@ -41,7 +45,7 @@ const OrderHistory = () => {
                         Status :
                       </span>
                       <span className="font-mono text-xl ml-3 text-blue-500 capitalize">
-                        Processing
+                        {status}
                       </span>
                     </div>
                   </div>

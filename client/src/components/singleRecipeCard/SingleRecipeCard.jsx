@@ -7,12 +7,15 @@ import SingleRecipeInfo from "../singleRecipeInfo/SingleRecipeInfo";
 import { RecipesAndChefsContext } from "../../layouts/Layout";
 import { AuthContext } from "../../context/AuthProvider";
 import toastConfig from "../../utils/toastConfig";
+import { useNavigate } from "react-router-dom";
 const SingleRecipeCard = ({ recipe }) => {
   const { user } = useContext(AuthContext);
-
   const { name, price, recipe_id, recipe_image_url, rating } = recipe;
   const { chefs } = useContext(RecipesAndChefsContext);
   const [chefInfo, setChefInfo] = useState({});
+  const navigate = useNavigate()
+
+
   const findChefByRecipe = (recipeId) => {
     const findChef =
       chefs && chefs.find((chef) => chef.recipes_id.includes(recipeId));
@@ -21,29 +24,32 @@ const SingleRecipeCard = ({ recipe }) => {
   };
 
   const handleAddToCart = () => {
-    const cartInfo = {
-      email: user.email,
-      recipeName: name,
-      image: recipe_image_url,
-      price: price,
-      recipeId: recipe_id,
-      quantity: 1,
-    };
-    fetch("http://localhost:4000/cart", {
-      method: "POST",
-      headers: { "content-type": "application/json" },
-      body: JSON.stringify(cartInfo),
-    })
-      .then((res) => res.json())
-      .then((result) => {
-        if (result.acknowledged) {
-          toast.success("Cart added successfully", toastConfig);
-        } else {
-          toast.error("Something went wrong, try again", toastConfig);
-        }
-      });
+    if (user) {
+      const cartInfo = {
+        email: user.email,
+        recipeName: name,
+        image: recipe_image_url,
+        price: price,
+        recipeId: recipe_id,
+        quantity: 1,
+      };
+      fetch("http://localhost:4000/cart", {
+        method: "POST",
+        headers: { "content-type": "application/json" },
+        body: JSON.stringify(cartInfo),
+      })
+        .then((res) => res.json())
+        .then((result) => {
+          if (result.acknowledged) {
+            toast.success("Cart added successfully", toastConfig);
+          } else {
+            toast.error("Something went wrong, try again", toastConfig);
+          }
+        });
+    } else {
+      navigate("/login")
+    }
   };
-
 
   return (
     <div className="flex flex-col mb-10 bg-white p-4 rounded-sm">

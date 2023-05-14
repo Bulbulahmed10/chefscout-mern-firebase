@@ -8,6 +8,7 @@ const PORT = process.env.PORT || 4000;
 const countryFoodName = require("./data/countryFoodName.json");
 const connectDb = require("./db/connectDb");
 const routes = require("./routes/routes");
+
 const uri = process.env.MONGODB_URI;
 
 app.use(cors());
@@ -165,8 +166,6 @@ async function run() {
       res.send(result);
     });
 
-
-
     // orders routes
     app.get("/order", async (req, res) => {
       let query = {};
@@ -180,6 +179,21 @@ async function run() {
     app.post("/order", async (req, res) => {
       const orderInfo = req.body;
       const result = await ordersCollection.insertOne(orderInfo);
+      res.send(result);
+    });
+
+    app.patch("/order", async (req, res) => {
+      const orderStatusInfo = req.body;
+      const filter = { orderId: orderStatusInfo.orderId };
+      const options = { upsert: true };
+      const updateStatus = {
+        $set: { status: orderStatusInfo.status },
+      };
+      const result = await ordersCollection.updateOne(
+        filter,
+        updateStatus,
+        options
+      );
       res.send(result);
     });
 

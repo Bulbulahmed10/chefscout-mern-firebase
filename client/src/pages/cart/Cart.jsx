@@ -192,7 +192,6 @@ const Cart = () => {
               Buy Recipe
             </Link>
           </div>
-          <div></div>
         </div>
       )}
      <OrderHistory />

@@ -2,17 +2,12 @@ import React, { useState } from "react";
 import { toast } from "react-hot-toast";
 import { AiOutlineHeart, AiTwotoneHeart, AiFillStar } from "react-icons/ai";
 import Ratings from "react-rating";
+import toastConfig from "../../utils/toastConfig";
 const RecipeCard = ({ recipe }) => {
   const { recipe_image_url, name, ingredients, instructions, rating } = recipe;
   const [isFavorite, setIsFavorite] = useState(false);
   const handleFavoriteClick = () => {
-    toast.success("Recipe is your favorite", {
-      style: {
-        borderRadius: "10px",
-        background: "#333",
-        color: "#fff",
-      },
-    });
+    toast.success("Recipe is your favorite", toastConfig);
     setIsFavorite(true);
   };
 
@@ -34,7 +29,7 @@ const RecipeCard = ({ recipe }) => {
             </li>
           ))}
         </ul>
-            <p className="font-mono"> {instructions} </p>
+        <p className="font-mono"> {instructions} </p>
       </div>
       <div className="flex justify-between items-center px-4 pb-2">
         <div className="flex items-center mr-4">
