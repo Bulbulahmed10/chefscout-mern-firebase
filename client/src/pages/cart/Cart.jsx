@@ -4,42 +4,45 @@ import { AuthContext } from "../../context/AuthProvider";
 import CartItem from "../../components/cartItem/CartItem";
 import { MdShoppingCartCheckout } from "react-icons/md";
 import { v4 as uuidv4 } from "uuid";
-
 import Swal from "sweetalert2";
 import { Link, useNavigate } from "react-router-dom";
 import OrderHistory from "../../components/orderHistory/OrderHistory";
+
 const Cart = () => {
   const [carts, setCarts] = useState([]);
   const [totalCost, setTotalCost] = useState(0);
   const { user } = useContext(AuthContext);
   const [isCheckoutClick, setIsCheckoutClick] = useState(false);
   const navigate = useNavigate();
-  console.log(user);
+
   useEffect(() => {
-    fetch(`http://localhost:4000/carts?email=${user?.email}`, {
-      method: "GET",
-      headers: {
-        authorization: `Bearer ${localStorage.getItem(
-          "chefscout-access-token"
-        )}`,
-      },
-    })
-      .then((res) => res.json())
-      .then((data) => {
-        if (!data.error) {
-          let totalPrice = 0;
-          data.length > 0 &&
-            data.map(
-              (singleItem) =>
-                (totalPrice += singleItem.price * singleItem.quantity)
-            );
-          setTotalCost(totalPrice);
-          setCarts(data);
-        } else {
-          navigate("/");
-        }
-      });
-  }, []);
+    if (user?.email) {
+      fetch(`http://localhost:4000/carts?email=${user?.email}`, {
+        method: "GET",
+        headers: {
+          authorization: `Bearer ${localStorage.getItem(
+            "chefscout-access-token"
+          )}`,
+        },
+      })
+        .then((res) => res.json())
+        .then((data) => {
+          if (!data.error) {
+            let totalPrice = 0;
+            data.length > 0 &&
+              data.map(
+                (singleItem) =>
+                  (totalPrice += singleItem.price * singleItem.quantity)
+              );
+            setTotalCost(totalPrice);
+            setCarts(data);
+          } else {
+            navigate("/");
+          }
+        });
+    }
+  }, [user?.email]);
+
   const tax = (totalCost * 10) / 100;
   const deliveryCharge = (totalCost * 10) / 100;
   const estimateTotalCost = totalCost + tax + deliveryCharge;

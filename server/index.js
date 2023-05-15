@@ -34,6 +34,7 @@ const client = new MongoClient(uri, {
   },
 });
 
+
 const verifyJWT = (req, res, next) => {
   const authorization = req.headers.authorization;
   if (!authorization) {
@@ -55,7 +56,7 @@ const verifyJWT = (req, res, next) => {
 
 async function run() {
   try {
-    await client.connect();
+    // await client.connect();
 
     //jwt
     app.post("/jwt", (req, res) => {
@@ -74,10 +75,23 @@ async function run() {
     const ordersCollection = client.db("ChefscoutDB").collection("orders");
     // recipes CRUD functionality and routes
     app.get("/recipes", async (req, res) => {
-      const cursor = recipesCollection.find();
-      const result = await cursor.toArray();
+      const page = parseInt(req.query.page) || 0;
+      const limit = parseInt(req.query.limit) || 10;
+      const skip = page * limit;
+      const result = await recipesCollection
+        .find()
+        .skip(skip)
+        .limit(limit)
+        .toArray();
+
       res.send(result);
     });
+
+    app.get('/totalRecipes',async (req ,res) => {
+      const totalRecipes = await recipesCollection.estimatedDocumentCount()
+
+      res.send({totalRecipes});
+    })
 
     app.post("/recipe", async (req, res) => {
       const recipe = req.body;
@@ -142,7 +156,6 @@ async function run() {
       res.send(result);
     });
 
-
     app.put("/chef", async (req, res) => {
       const sellerAndRecipeId = req.body;
       const filter = { chef_id: sellerAndRecipeId.chef_id };
@@ -158,7 +171,6 @@ async function run() {
       );
       res.send(result);
     });
-
 
     app.patch("/chef", async (req, res) => {
       const recipeAndChefId = req.body;
@@ -185,8 +197,6 @@ async function run() {
       const carts = await cartsCollection.find(query).toArray();
       res.send(carts);
     });
-
-
 
     app.delete("/carts", async (req, res) => {
       if (req.query?.email) {

@@ -6,10 +6,12 @@ const OrderHistory = () => {
   const [orders, setOrders] = useState([]);
 
   useEffect(() => {
-    fetch(`http://localhost:4000/order?email=${user?.email}`)
+    if(user?.email) {
+      fetch(`http://localhost:4000/order?email=${user.email}`)
       .then((res) => res.json())
       .then((data) => setOrders(data));
-  }, []);
+    }
+  }, [user?.email]);
 
   return (
     <div className="m-8">
