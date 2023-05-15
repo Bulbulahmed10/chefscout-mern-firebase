@@ -2,6 +2,7 @@ const express = require("express");
 const cors = require("cors");
 require("dotenv").config();
 const { MongoClient, ServerApiVersion } = require("mongodb");
+const jwt = require("jsonwebtoken");
 const app = express();
 const PORT = process.env.PORT || 4000;
 
@@ -33,9 +34,39 @@ const client = new MongoClient(uri, {
   },
 });
 
+const verifyJWT = (req, res, next) => {
+  const authorization = req.headers.authorization;
+  if (!authorization) {
+    return res
+      .status(401)
+      .send({ error: true, message: "unauthorized access" });
+  }
+  const token = authorization.split(" ")[1];
+  jwt.verify(token, process.env.ACCESS_TOKEN_SECRET, (err, decoded) => {
+    if (err) {
+      return res
+        .status(403)
+        .send({ error: true, message: "Invalid access token" });
+    }
+    req.decoded = decoded;
+    next();
+  });
+};
+
 async function run() {
   try {
     await client.connect();
+
+    //jwt
+    app.post("/jwt", (req, res) => {
+      const user = req.body;
+      const token = jwt.sign(user, process.env.ACCESS_TOKEN_SECRET, {
+        expiresIn: "1h",
+      });
+      // console.log(token);
+      res.send({ token });
+    });
+
     // database collections
     const recipesCollection = client.db("ChefscoutDB").collection("recipes");
     const chefsCollection = client.db("ChefscoutDB").collection("chefs");
@@ -111,6 +142,7 @@ async function run() {
       res.send(result);
     });
 
+
     app.put("/chef", async (req, res) => {
       const sellerAndRecipeId = req.body;
       const filter = { chef_id: sellerAndRecipeId.chef_id };
@@ -127,6 +159,7 @@ async function run() {
       res.send(result);
     });
 
+
     app.patch("/chef", async (req, res) => {
       const recipeAndChefId = req.body;
       const query = { chef_id: recipeAndChefId.chef_id };
@@ -140,7 +173,11 @@ async function run() {
 
     // cart routes
 
-    app.get("/carts", async (req, res) => {
+    app.get("/carts", verifyJWT, async (req, res) => {
+      const decoded = req.decoded;
+      if (decoded.email !== req.query.email) {
+        return res.status().send({ error: 1, message: "forbidden access" });
+      }
       let query = {};
       if (req?.query?.email) {
         query = { email: req.query.email };
@@ -148,6 +185,8 @@ async function run() {
       const carts = await cartsCollection.find(query).toArray();
       res.send(carts);
     });
+
+
 
     app.delete("/carts", async (req, res) => {
       if (req.query?.email) {

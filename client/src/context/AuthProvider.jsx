@@ -21,13 +21,12 @@ const githubProvider = new GithubAuthProvider();
 const AuthProvider = ({ children }) => {
   const [user, setUser] = useState(null);
   const [loading, setLoading] = useState(true);
-  const googleSignIn = async() => {
-
+  const googleSignIn = async () => {
     setLoading(true);
     await signInWithPopup(auth, googleProvider);
-    return auth.currentUser
-  }; 
- 
+    return auth.currentUser;
+  };
+
   const githubSignIn = () => {
     setLoading(true);
     return signInWithPopup(auth, githubProvider);
@@ -55,6 +54,20 @@ const AuthProvider = ({ children }) => {
     const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
       setUser(currentUser);
       setLoading(false);
+      if (currentUser && currentUser.email) {
+        const jwtUserInfo = { email: currentUser.email };
+        fetch("http://localhost:4000/jwt", {
+          method: "POST",
+          headers: { "content-type": "application/json" },
+          body: JSON.stringify(jwtUserInfo),
+        })
+          .then((res) => res.json())
+          .then((data) => {
+            localStorage.setItem("chefscout-access-token", data.token);
+          });
+      } else {
+        localStorage.removeItem("chefscout-access-token");
+      }
     });
 
     return () => {
@@ -69,8 +82,6 @@ const AuthProvider = ({ children }) => {
       photoURL: userPhotoUrl,
     });
   };
-
-
 
   const logOutUser = () => {
     return signOut(auth);
